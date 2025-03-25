@@ -1,0 +1,15 @@
+.sns {
+    font-size: 22.5px;
+}
+
+@media screen and (max-width: 768px) {
+    .sns {
+        font-size: 19px;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .sns {
+        font-size: 17px;
+    }
+}
