@@ -12,7 +12,7 @@ export function Cards() {
 
                         <p className="text-xs md:text-sm mb-3 md:mb-5">
                             I am a web developer focusing on both front-end and back-end, living in Sapporo.
-                            As a hobby, I also run a <a href="https://www.youtube.com/@piennu_777"><i className="bi bi-youtube"></i> YouTube channel</a> with over 3,000 subscribers and more than
+                            As a hobby, I also run a <a href="https://www.youtube.com/@piennu_777"><i className="bi bi-youtube"></i> channel</a> with over 3,000 subscribers and more than
                             1 million total views.
                         </p>
                     </div>
