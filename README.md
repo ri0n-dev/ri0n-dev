@@ -17,8 +17,8 @@ YouTubeでは登録者1000人以上を獲得しています。
     srcset="https://github-readme-stats.vercel.app/api?username=ri0n-dev&show_icons=true"
     media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
   />
-  <img src="https://github-readme-stats.vercel.app/api?username=ri0n-dev&show_icons=true" />
+  <img height="200px" src="https://github-readme-stats.vercel.app/api?username=ri0n-dev&show_icons=true" />
 </picture>
 <picture>
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=ri0n-dev&layout=compact&theme=dark" />
+  <img height="200px" src="https://github-readme-stats.vercel.app/api/top-langs/?username=ri0n-dev&layout=compact&theme=dark" />
 </picture>
