@@ -1,4 +1,3 @@
-import Confetti from "@/components/section/confetti";
 import { Profile } from "@/components/section/profile";
 import { Cards } from "@/components/section/cards";
 
