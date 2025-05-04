@@ -4,7 +4,7 @@ I have over 3,000 subscribers on YouTube and have a total of 1.3m views.
 
 [![Discord Presence](https://lanyard.cnrad.dev/api/851357394976899116)](https://discord.com/users/851357394976899116)
 
-## 🌱 Main Language
+## 🌱 Top Language and Tool
 <img alt="my skills" src="https://skillicons.dev/icons?theme=dark&perline=12&i=html,css,js,ts,tailwind,react,nextjs,discordjs,cs" />  
 
 ## 👀 Github Status
