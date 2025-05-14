@@ -14,13 +14,13 @@ export function Profile() {
                     </div>
                 </div>
                 <div className={`flex space-x-3 ${style.sns}`}>
-                    <a href="#" className="text-gray-500 hover:text-gray-600">
+                    <a href="https://x.com/ri0n_dev" target="_blank" className="text-gray-500 hover:text-gray-600">
                         <SiX width={24} height={24} />
                     </a>
-                    <a href="#" className="text-gray-500 hover:text-gray-600">
+                    <a href="https://github.com/ri0n-dev" target="_blank" className="text-gray-500 hover:text-gray-600">
                         <SiGithub width={24} height={24} />
                     </a>
-                    <a href="#" className="text-gray-500 hover:text-gray-600">
+                    <a href="https://discord.gg/6BPfVm6cST" target="_blank" className="text-gray-500 hover:text-gray-600">
                         <SiDiscord width={24} height={24} />
                     </a>
                 </div>
