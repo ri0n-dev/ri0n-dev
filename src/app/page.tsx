@@ -1,5 +1,5 @@
-import { Profile } from "@/components/section/profile";
-import { Cards } from "@/components/section/cards";
+import { Profile } from "@/components/section/Profile";
+import { Cards } from "@/components/section/Cards";
 
 export default function Home() {
   return (
