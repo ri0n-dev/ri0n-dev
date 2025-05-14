@@ -26,7 +26,7 @@ export function Cards() {
                 </div>
 
                 <div className="flex flex-col md:flex-row gap-4">
-                    <div className="w-full md:w-4/10 border border-gray-200 rounded-lg p-6">
+                    <div className="w-full md:w-5/12 border border-gray-200 rounded-lg p-6">
                         <div className="text-gray-800 mb-5">
                             <PanelsTopLeft width={18} height={18} fill="none" stroke="currentColor" strokeWidth={1} />
                             <h1 className="text-xl md:text-2xl mb-3">Fashionable</h1>
@@ -38,7 +38,7 @@ export function Cards() {
                         <div className={`${style.skeleton}`} style={{ width: "70%", height: "15px" }}></div>
                     </div>
 
-                    <div className="w-full md:w-6/10 border border-gray-200 rounded-lg p-6 mb-4 md:mb-0">
+                    <div className="w-full md:w-7/12 border border-gray-200 rounded-lg p-6 mb-4 md:mb-0 overflow-hidden">
                         <div className="text-gray-800 mb-10">
                             <Hammer width={18} height={18} fill="none" stroke="currentColor" strokeWidth={1} />
                             <h1 className="text-xl md:text-2xl mb-3">My Skill</h1>
@@ -46,7 +46,7 @@ export function Cards() {
                             <p className="text-sm">I can develop using these.</p>
                         </div>
 
-                        <Marquee gradient gradientColor="#ffffff" className="text-muted-foreground">
+                        <Marquee gradient gradientColor="#ffffff" className="text-muted-foreground w-full">
                             <div className="flex mx-4 gap-x-8">
                                 <SiHtml5 size={30} />
                                 <SiCss size={30} />
