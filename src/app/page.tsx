@@ -1,7 +1,7 @@
 import { Profile } from "@/components/section/Profile";
 import { Cards } from "@/components/section/Cards";
 
-export default function Home() {
+export default function Portfolio() {
   return (
     <div className="flex md:items-center md:justify-center h-screen">
       <div className="flex flex-col md:items-center md:justify-center w-full md:max-w-2xl gap-5 p-4">
