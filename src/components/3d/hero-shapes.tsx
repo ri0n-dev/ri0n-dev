@@ -18,15 +18,16 @@ function Model() {
     })
 
     useEffect(() => {
-        scene.traverse((child) => {
-            if (child instanceof THREE.Mesh) {
+        scene.traverse((object) => {
+            const child = object as THREE.Mesh;
+            if (child.isMesh) {
                 child.material = new THREE.MeshStandardMaterial({
                     color: 0xffffff,
                     roughness: 1,
                     metalness: 2,
-                })
+                });
             }
-        })
+        });
     }, [scene])
 
     return <primitive object={scene} scale={0.5} />
