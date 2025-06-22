@@ -1,40 +1,58 @@
 "use client"
 
-import { Suspense } from 'react'
 import * as THREE from 'three'
 import { Canvas, useFrame } from '@react-three/fiber'
 import { OrbitControls, useGLTF } from '@react-three/drei'
-import { useEffect } from 'react'
+import { Suspense, useRef, useCallback, useMemo, useEffect } from "react"
+
+useGLTF.preload("/assets/models/hero.glb")
 
 function Model() {
-    const gltf = useGLTF('/assets/models/hero.glb')
-    const scene = gltf.scene
+    const gltf = useGLTF("/assets/models/hero.glb")
+    const meshRef = useRef<THREE.Group>(null)
 
-    useFrame(() => {
-        if (scene) {
-            scene.rotation.y += 0.01
-            scene.rotation.x += 0.005
+    const optimizedMaterial = useMemo(
+        () =>
+            new THREE.MeshStandardMaterial({
+                color: 0xffffff,
+                roughness: 0.8,
+                metalness: 0.2,
+            }),
+        [],
+    )
+
+    const animate = useCallback(() => {
+        if (meshRef.current) {
+            meshRef.current.rotation.y += 0.01
+            meshRef.current.rotation.x += 0.005
         }
-    })
+    }, [])
+
+    useFrame(animate)
 
     useEffect(() => {
-        if (!scene) return;
-        
-        scene.traverse((object) => {
-            const child = object as THREE.Mesh;
-            if (child.isMesh) {
-                child.material = new THREE.MeshStandardMaterial({
-                    color: 0xffffff,
-                    roughness: 1,
-                    metalness: 2,
-                });
+        if (!gltf.scene) return
+
+        gltf.scene.traverse((object) => {
+            if (object instanceof THREE.Mesh) {
+                object.material = optimizedMaterial
+                object.castShadow = true
+                object.receiveShadow = true
             }
-        });
-    }, [scene])
+        })
 
-    if (!scene) return null
+        return () => {
+            optimizedMaterial.dispose()
+        }
+    }, [gltf.scene, optimizedMaterial])
 
-    return <primitive object={scene} scale={0.5} />
+    if (!gltf.scene) return null
+
+    return (
+        <group ref={meshRef}>
+            <primitive object={gltf.scene} scale={0.5} />
+        </group>
+    )
 }
 
 export default function Shapes3D() {
