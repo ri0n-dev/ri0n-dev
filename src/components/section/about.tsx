@@ -117,7 +117,7 @@ export default function About() {
                 <div className="grid grid-cols-10 grid-rows-4 gap-4 h-screen max-h-[400px]">
                     <BentoCard className="col-span-4 row-span-4 relative p-6 pt-4 flex flex-col">
                         <div className="relative flex flex-col h-full pb-3">
-                            <SparklesText colors={{ first: "#fff", second: "#a3a3a3" }} sparklesCount={15} className="w-full h-full flex items-center justify-center">
+                            <SparklesText colors={{ first: "#fff", second: "#a3a3a3" }} className="w-full h-full flex items-center justify-center">
                                 <div className="py-3 px-1 w-full h-full">
                                     <div className="w-full h-full rounded-md border border-neutral-800 drop-shadow-[0_0_40px_white] overflow-hidden">
                                         <div className="relative w-full h-7 pt-0.5 pb-0.5 border-b border-neutral-800 px-2">
