@@ -11,13 +11,6 @@ function Model() {
 
     if (!scene) return null
 
-    useFrame(() => {
-        if (scene) {
-            scene.rotation.y += 0.01
-            scene.rotation.x += 0.005
-        }
-    })
-
     scene.traverse((child) => {
         if ((child as THREE.Mesh).isMesh) {
             const mesh = child as THREE.Mesh
@@ -29,9 +22,13 @@ function Model() {
         }
     })
 
+    useFrame(() => {
+        scene.rotation.y += 0.01
+        scene.rotation.x += 0.005
+    })
+
     return <primitive object={scene} scale={0.5} />
 }
-
 
 export default function Shapes3D() {
     return (
