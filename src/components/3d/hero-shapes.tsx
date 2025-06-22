@@ -1,86 +1,87 @@
 "use client"
 
-import * as THREE from 'three'
+import { Suspense, useRef, useEffect, useMemo } from "react"
 import { Canvas, useFrame } from '@react-three/fiber'
 import { OrbitControls, useGLTF } from '@react-three/drei'
-import { Suspense, useRef, useCallback, useMemo, useEffect } from "react"
+import { Group, MeshStandardMaterial, Mesh } from 'three'
 
 useGLTF.preload("/assets/models/hero.glb")
 
 function Model() {
-    const gltf = useGLTF("/assets/models/hero.glb")
-    const meshRef = useRef<THREE.Group>(null)
+  const { scene } = useGLTF("/assets/models/hero.glb")
+  const meshRef = useRef<Group>(null)
 
-    const optimizedMaterial = useMemo(
-        () =>
-            new THREE.MeshStandardMaterial({
-                color: 0xffffff,
-                roughness: 0.8,
-                metalness: 0.2,
-            }),
-        [],
-    )
+  const optimizedMaterial = useMemo(
+    () => new MeshStandardMaterial({
+      color: 0xffffff,
+      roughness: 0.8,
+      metalness: 0.2,
+    }),
+    []
+  )
 
-    const animate = useCallback(() => {
-        if (meshRef.current) {
-            meshRef.current.rotation.y += 0.01
-            meshRef.current.rotation.x += 0.005
+  useFrame(() => {
+    if (meshRef.current) {
+      meshRef.current.rotation.y += 0.01
+      meshRef.current.rotation.x += 0.005
+    }
+  })
+
+  useEffect(() => {
+    if (!scene) return
+
+    scene.traverse((object) => {
+      if (object instanceof Mesh) {
+        object.material = optimizedMaterial
+        object.castShadow = true
+        object.receiveShadow = true
+      }
+    })
+
+    return () => {
+      optimizedMaterial.dispose()
+      scene.traverse((object) => {
+        if (object instanceof Mesh && object.geometry) {
+          object.geometry.dispose()
         }
-    }, [])
+      })
+    }
+  }, [scene, optimizedMaterial])
 
-    useFrame(animate)
+  if (!scene) return null
 
-    useEffect(() => {
-        if (!gltf.scene) return
-
-        gltf.scene.traverse((object) => {
-            if (object instanceof THREE.Mesh) {
-                object.material = optimizedMaterial
-                object.castShadow = true
-                object.receiveShadow = true
-            }
-        })
-
-        return () => {
-            optimizedMaterial.dispose()
-        }
-    }, [gltf.scene, optimizedMaterial])
-
-    if (!gltf.scene) return null
-
-    return (
-        <group ref={meshRef}>
-            <primitive object={gltf.scene} scale={0.5} />
-        </group>
-    )
+  return (
+    <group ref={meshRef}>
+      <primitive object={scene} scale={0.5} />
+    </group>
+  )
 }
 
 export default function Shapes3D() {
-    return (
-        <div style={{ width: '100vw', height: '100vh' }}>
-            <Canvas camera={{ position: [0, 0, 5], fov: 50 }}>
-                <ambientLight intensity={0.3} />
+  return (
+    <div style={{ width: '100%', height: '100vh' }}>
+      <Canvas camera={{ position: [0, 0, 5], fov: 50 }} dpr={[1, 2]}>
+        <ambientLight intensity={0.3} />
+        <directionalLight
+          position={[10, 10, 5]}
+          intensity={1.2}
+          castShadow
+          shadow-mapSize={[512, 512]}
+        />
 
-                <directionalLight
-                    position={[10, 10, 5]}
-                    intensity={1.2}
-                    castShadow
-                />
+        <Suspense fallback={null}>
+          <Model />
+        </Suspense>
 
-                <pointLight position={[-10, -10, -5]} intensity={0.5} />
-
-                <Suspense fallback={null}>
-                    <Model />
-                </Suspense>
-
-                <OrbitControls
-                    enableZoom={false}
-                    enablePan={false}
-                    enableRotate={true}
-                    autoRotate={true}
-                    autoRotateSpeed={1}
-                />
-            </Canvas>
-        </div>
-    )
+        <OrbitControls
+          enableZoom={false}
+          enablePan={false}
+          enableRotate={true}
+          autoRotate={true}
+          autoRotateSpeed={1}
+          makeDefault
+        />
+      </Canvas>
+    </div>
+  )
 }
