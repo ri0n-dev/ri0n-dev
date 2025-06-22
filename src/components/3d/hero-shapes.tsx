@@ -1,57 +1,37 @@
 "use client"
 
-import { Suspense, useEffect, useRef } from 'react'
+import { Suspense } from 'react'
 import * as THREE from 'three'
 import { Canvas, useFrame } from '@react-three/fiber'
 import { OrbitControls, useGLTF } from '@react-three/drei'
 
 function Model() {
     const gltf = useGLTF('/assets/models/hero.glb')
-    const sceneRef = useRef<THREE.Group | null>(null)
+    const scene = gltf.scene
 
-    useEffect(() => {
-        if (!gltf.scene) return
-
-        const scene = gltf.scene.clone()
-
-        scene.traverse((child) => {
-            if ((child as THREE.Mesh).isMesh) {
-                const mesh = child as THREE.Mesh
-                mesh.material = new THREE.MeshStandardMaterial({
-                    color: 0xffffff,
-                    roughness: 1,
-                    metalness: 2,
-                })
-            }
-        })
-
-        sceneRef.current = scene
-
-        return () => {
-            scene.traverse(child => {
-                if ((child as THREE.Mesh).isMesh) {
-                    const mesh = child as THREE.Mesh
-                    if (Array.isArray(mesh.material)) {
-                        mesh.material.forEach(m => m.dispose?.())
-                    } else {
-                        mesh.material.dispose?.()
-                    }
-                    mesh.geometry.dispose()
-                }
-            })
-        }
-    }, [gltf.scene])
+    if (!scene) return null
 
     useFrame(() => {
-        if (sceneRef.current) {
-            sceneRef.current.rotation.y += 0.01
-            sceneRef.current.rotation.x += 0.005
+        if (scene) {
+            scene.rotation.y += 0.01
+            scene.rotation.x += 0.005
         }
     })
 
-    if (!sceneRef.current) return null;
-    return <primitive object={sceneRef.current} scale={0.5} />
+    scene.traverse((child) => {
+        if ((child as THREE.Mesh).isMesh) {
+            const mesh = child as THREE.Mesh
+            mesh.material = new THREE.MeshStandardMaterial({
+                color: 0xffffff,
+                roughness: 1,
+                metalness: 2,
+            })
+        }
+    })
+
+    return <primitive object={scene} scale={0.5} />
 }
+
 
 export default function Shapes3D() {
     return (
