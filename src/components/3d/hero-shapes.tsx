@@ -10,14 +10,16 @@ function Model() {
     const gltf = useGLTF('/assets/models/hero.glb')
     const scene = gltf.scene
 
-    if (!scene) return null
-
     useFrame(() => {
-        scene.rotation.y += 0.01
-        scene.rotation.x += 0.005
+        if (scene) {
+            scene.rotation.y += 0.01
+            scene.rotation.x += 0.005
+        }
     })
 
     useEffect(() => {
+        if (!scene) return;
+        
         scene.traverse((object) => {
             const child = object as THREE.Mesh;
             if (child.isMesh) {
@@ -29,6 +31,8 @@ function Model() {
             }
         });
     }, [scene])
+
+    if (!scene) return null
 
     return <primitive object={scene} scale={0.5} />
 }
