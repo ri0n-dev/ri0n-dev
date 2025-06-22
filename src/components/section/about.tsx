@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { SiYoutube, SiX, SiGithub, SiDiscord, SiNextdotjs, SiTypescript, SiJavascript, SiReact, SiTailwindcss, SiCss, SiHtml5, SiDotnet, SiPhp, SiMysql, SiSupabase, SiMarkdown, SiVercel, SiAstro, SiGithubsponsors, SiMisskey, SiZenbrowser } from "@icons-pack/react-simple-icons";
 import { ChevronLeft, ChevronRight, RotateCw, Bookmark, Ellipsis } from "lucide-react"
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
@@ -38,18 +39,18 @@ export default function About() {
                                     My name is Rion. I am a web developer focusing on both front-end and back-end, living in Sapporo. As a hobby, I also run a channel with over 3,000 subscribers and more than 1.3M total views. I also enjoy playing Tetris in my free time.
                                 </p>
                                 <div className="flex items-center gap-x-3.5 mt-5">
-                                    <a href="https://www.youtube.com/@piennu_777" target="_blank" rel="noopener noreferrer">
+                                    <Link href="https://www.youtube.com/@piennu_777" target="_blank" rel="noopener noreferrer">
                                         <SiYoutube width={23} height={23} className="text-neutral-300" />
-                                    </a>
-                                    <a href="https://x.com/ri0n_dev" target="_blank" rel="noopener noreferrer">
+                                    </Link>
+                                    <Link href="https://x.com/ri0n_dev" target="_blank" rel="noopener noreferrer">
                                         <SiX width={23} height={23} className="text-neutral-300" />
-                                    </a>
-                                    <a href="https://github.com/ri0n-dev" target="_blank" rel="noopener noreferrer">
+                                    </Link>
+                                    <Link href="https://github.com/ri0n-dev" target="_blank" rel="noopener noreferrer">
                                         <SiGithub width={23} height={23} className="text-neutral-300" />
-                                    </a>
-                                    <a href="https://discord.com/users/851357394976899116" target="_blank" rel="noopener noreferrer">
+                                    </Link>
+                                    <Link href="https://discord.com/users/851357394976899116" target="_blank" rel="noopener noreferrer">
                                         <SiDiscord width={23} height={23} className="text-neutral-300" />
-                                    </a>
+                                    </Link>
                                 </div>
                             </div>
                             <Image src={"/assets/me.jpg"} alt="icon" width={650} height={650} className="w-65 h-full object-cover rounded-xl" />
@@ -107,7 +108,7 @@ export default function About() {
                         <div className="space-y-4">
                             <h2 className="text-neutral-100 text-3xl md:text-4xl font-bold">Team</h2>
                             <p className="text-neutral-400 text-sm md:text-base leading-relaxed font-geist">
-                                It's a team mainly composed of student developers. I founded the team and serve as its owner.
+                                It&apos;s a team mainly composed of student developers. I founded the team and serve as its owner.
                             </p>
                         </div>
                     </BentoCard>

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { SiTypescript, SiReact, SiNextdotjs, SiTailwindcss, SiDeno, SiDiscord, SiOpenai } from "@icons-pack/react-simple-icons";
 
 const Work = ({ image, alt, role, title, description, icons, }: { image: string; alt: string; role: string; title: string; description: string; icons: React.ComponentType<{ color: string; size: number }>[]; }) => {
@@ -31,7 +32,7 @@ export default function Works() {
             <h1 className="text-neutral-100 font-cormorant text-5xl md:text-7xl font-bold mt-30 mb-3 font-pp">Works</h1>
 
             <div className="grid grid-cols-2 grid-rows-2 gap-4">
-                <a href="https://zisty.net/" target="_blank" rel="noopener noreferrer">
+                <Link href="https://zisty.net/" target="_blank" rel="noopener noreferrer">
                     <Work
                         image="/assets/preview-zisty.png"
                         alt="Zisty"
@@ -40,9 +41,9 @@ export default function Works() {
                         description="We are a community team of mainly Japanese students who love programming"
                         icons={[SiTypescript, SiReact, SiNextdotjs, SiTailwindcss]}
                     />
-                </a>
+                </Link>
 
-                <a href="https://ai-x.ri0n.dev/" target="_blank" rel="noopener noreferrer">
+                <Link href="https://ai-x.ri0n.dev/" target="_blank" rel="noopener noreferrer">
                     <Work
                         image="/assets/preview-aix.png"
                         alt="AI-x"
@@ -51,7 +52,7 @@ export default function Works() {
                         description="AI-x is an AI that operates on Discord, capable of generating both images and text. It supports various models."
                         icons={[SiTypescript, SiDeno, SiDiscord]}
                     />
-                </a>
+                </Link>
 
                 <Work
                     image="/assets/preview-comingsoon.png"
