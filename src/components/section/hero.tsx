@@ -8,13 +8,13 @@ export default function Hero() {
             <div className="flex flex-col mt-45 justify-center items-center gap-y-3">
                 <div className="flex items-center gap-4">
                     <h1 className="text-neutral-100 font-(family-name:--font-pp) text-7xl font-bold">Hi, I&apos;m</h1>
-                    <Image src="/assets/icon.webp" alt="Rion" width={100} height={100} className="w-25 h-17 aspect-[2/1] object-cover object-[center_33%] rounded-md" />
+                    <Image src="/assets/icon.webp" alt="Rion" width={100} height={100} className="mb-4 w-25 h-17 aspect-[2/1] object-cover object-[center_33%] rounded-md" />
                     <h1 className="text-neutral-100 font-(family-name:--font-pp) text-7xl font-bold">Rion</h1>
                 </div>
 
                 <div className="flex items-center gap-4">
                     <h1 className="text-neutral-100 font-(family-name:--font-pp) text-7xl font-bold">I&apos;m a</h1>
-                    <div className="w-25 h-17 flex items-center justify-center rounded-md bg-gradient-to-br from-neutral-800/50 to-neutral-900/30">
+                    <div className="mb-2 w-25 h-17 flex items-center justify-center rounded-md bg-gradient-to-br from-neutral-800/50 to-neutral-900/30">
                         <MousePointer className="text-white/95 w-8 h-8" />
                     </div>
                     <h1 className="text-neutral-100 font-(family-name:--font-pp) text-7xl font-bold">Web Developer</h1>
