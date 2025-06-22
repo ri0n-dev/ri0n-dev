@@ -4,6 +4,7 @@ import { Suspense } from 'react'
 import * as THREE from 'three'
 import { Canvas, useFrame } from '@react-three/fiber'
 import { OrbitControls, useGLTF } from '@react-three/drei'
+import { useEffect } from 'react'
 
 function Model() {
     const gltf = useGLTF('/assets/models/hero.glb')
@@ -12,26 +13,24 @@ function Model() {
     if (!scene) return null
 
     useFrame(() => {
-        if (scene) {
-            scene.rotation.y += 0.01
-            scene.rotation.x += 0.005
-        }
+        scene.rotation.y += 0.01
+        scene.rotation.x += 0.005
     })
 
-    scene.traverse((child) => {
-        if ((child as THREE.Mesh).isMesh) {
-            const mesh = child as THREE.Mesh
-            mesh.material = new THREE.MeshStandardMaterial({
-                color: 0xffffff,
-                roughness: 1,
-                metalness: 2,
-            })
-        }
-    })
+    useEffect(() => {
+        scene.traverse((child) => {
+            if (child instanceof THREE.Mesh) {
+                child.material = new THREE.MeshStandardMaterial({
+                    color: 0xffffff,
+                    roughness: 1,
+                    metalness: 2,
+                })
+            }
+        })
+    }, [scene])
 
     return <primitive object={scene} scale={0.5} />
 }
-
 
 export default function Shapes3D() {
     return (
