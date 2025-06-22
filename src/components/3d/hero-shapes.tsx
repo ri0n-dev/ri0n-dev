@@ -1,33 +1,56 @@
 "use client"
 
-import { Suspense } from 'react'
+import { Suspense, useEffect, useRef } from 'react'
 import * as THREE from 'three'
 import { Canvas, useFrame } from '@react-three/fiber'
 import { OrbitControls, useGLTF } from '@react-three/drei'
 
 function Model() {
     const gltf = useGLTF('/assets/models/hero.glb')
-    const scene = gltf.scene
+    const sceneRef = useRef<THREE.Group | null>(null)
 
-    if (!scene) return null
+    useEffect(() => {
+        if (!gltf.scene) return
 
-    scene.traverse((child) => {
-        if ((child as THREE.Mesh).isMesh) {
-            const mesh = child as THREE.Mesh
-            mesh.material = new THREE.MeshStandardMaterial({
-                color: 0xffffff,
-                roughness: 1,
-                metalness: 2,
+        const scene = gltf.scene.clone()
+
+        scene.traverse((child) => {
+            if ((child as THREE.Mesh).isMesh) {
+                const mesh = child as THREE.Mesh
+                mesh.material = new THREE.MeshStandardMaterial({
+                    color: 0xffffff,
+                    roughness: 1,
+                    metalness: 2,
+                })
+            }
+        })
+
+        sceneRef.current = scene
+
+        return () => {
+            scene.traverse(child => {
+                if ((child as THREE.Mesh).isMesh) {
+                    const mesh = child as THREE.Mesh
+                    if (Array.isArray(mesh.material)) {
+                        mesh.material.forEach(m => m.dispose?.())
+                    } else {
+                        mesh.material.dispose?.()
+                    }
+                    mesh.geometry.dispose()
+                }
             })
+        }
+    }, [gltf.scene])
+
+    useFrame(() => {
+        if (sceneRef.current) {
+            sceneRef.current.rotation.y += 0.01
+            sceneRef.current.rotation.x += 0.005
         }
     })
 
-    useFrame(() => {
-        scene.rotation.y += 0.01
-        scene.rotation.x += 0.005
-    })
-
-    return <primitive object={scene} scale={0.5} />
+    if (!sceneRef.current) return null;
+    return <primitive object={sceneRef.current} scale={0.5} />
 }
 
 export default function Shapes3D() {
