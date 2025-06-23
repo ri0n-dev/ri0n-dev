@@ -1,5 +1,4 @@
 import Image from "next/image"
-import Shapes3D from "@/components/3d/hero-shapes";
 import { MousePointer } from "lucide-react";
 
 export default function Hero() {
