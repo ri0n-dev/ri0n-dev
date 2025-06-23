@@ -7,7 +7,7 @@ const Work = ({ image, alt, role, title, description, icons, }: { image: string;
         <div className={`bg-neutral-50/3 rounded-2xl p-10 font-geist`} style={{ backgroundImage: `radial-gradient(at 88% 40%, hsl(0,0%,10%,2%) 0px, transparent 85%), radial-gradient(at 49% 30%, hsl(0,0%,10%,2%) 0px, transparent 85%), radial-gradient(at 14% 26%, hsl(0,0%,10%,2%) 0px, transparent 85%), radial-gradient(at 0% 64%, hsl(0,0%,26%,2%) 0px, transparent 85%), radial-gradient(at 41% 94%, hsl(0,0%,36%,2%) 0px, transparent 85%), radial-gradient(at 100% 99%, hsl(0,0%,13%,2%) 0px, transparent 85%)` }}>
             <div className="col-span-1 row-span-2 relative flex flex-col">
                 <div className="aspect-video w-full">
-                    <Image src={image} alt={alt} width={1920} height={1080} className="w-full h-full rounded-xl object-cover" />
+                    <Image src={image} alt={alt} width={600} height={300} className="w-full h-full rounded-xl object-cover" />
                 </div>
 
                 <div className="pt-5 text-left">

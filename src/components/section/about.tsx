@@ -19,7 +19,7 @@ const IconCard = ({ Icon }: { Icon: React.ComponentType<React.SVGProps<SVGSVGEle
     return (
         <div className="flex items-center justify-center w-20 h-20 rounded-2xl border border-white/5 bg-white/1 transition-all duration-300 hover:scale-105">
             <div className="will-change-transform transition-all duration-300 hover:scale-105">
-                <Icon className="w-7.5 h-7.5 text-white drop-shadow-[0_0_6px_white]" />
+                <Icon className="w-7.5 h-7.5 text-white drop-shadow-[0_0_5px_white]" />
             </div>
         </div>
     );
