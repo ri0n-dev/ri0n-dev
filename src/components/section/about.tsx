@@ -19,7 +19,7 @@ const IconCard = ({ Icon }: { Icon: React.ComponentType<React.SVGProps<SVGSVGEle
     return (
         <div className="flex items-center justify-center w-20 h-20 rounded-2xl border border-white/5 bg-white/1 transition-all duration-300 hover:scale-105">
             <div className="will-change-transform transition-all duration-300 hover:scale-105">
-                <Icon className="w-7.5 h-7.5 text-white drop-shadow-[0_0_15px_white]" />
+                <Icon className="w-7.5 h-7.5 text-white drop-shadow-[0_0_6px_white]" />
             </div>
         </div>
     );
@@ -131,8 +131,8 @@ export default function About() {
                                             </div>
                                             <div className="flex gap-1 justify-center items-center h-full">
                                                 <Bookmark size={12} color="#737373" />
-                                                <div className="px-7 border border-neutral-800 rounded-sm flex items-center">
-                                                    <div className="text-[10px] text-neutral-200 drop-shadow-[0_0_5px_#d4d4d4]">www.ri0n.dev</div>
+                                                <div className="px-10 border border-neutral-800 rounded-sm flex items-center">
+                                                    <div className="text-[10px] text-neutral-200">www.ri0n.dev</div>
                                                 </div>
                                             </div>
                                         </div>

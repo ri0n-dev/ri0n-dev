@@ -99,13 +99,11 @@ export default function Shapes3D() {
       >
         {isRotating ? (
           <>
-            <Pause className="w-4 h-4 mr-2" />
-            Stop
+            <Pause className="w-4 h-4 mr-2" />Stop
           </>
         ) : (
           <>
-            <Play className="w-4 h-4 mr-2" />
-            Play
+            <Play className="w-4 h-4 mr-2" />Play
           </>
         )}
       </Button>
