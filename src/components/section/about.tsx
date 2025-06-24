@@ -1,29 +1,17 @@
 import Image from "next/image";
 import Link from "next/link";
-import { SiYoutube, SiX, SiGithub, SiDiscord, SiNextdotjs, SiTypescript, SiJavascript, SiReact, SiTailwindcss, SiCss, SiHtml5, SiDotnet, SiPhp, SiMysql, SiSupabase, SiMarkdown, SiVercel, SiAstro, SiGithubsponsors, SiMisskey, SiZenbrowser } from "@icons-pack/react-simple-icons";
-import { ChevronLeft, ChevronRight, RotateCw, Bookmark, Ellipsis } from "lucide-react"
+import { SiYoutube, SiX, SiGithub, SiDiscord, SiGithubsponsors, SiMisskey, SiZenbrowser } from "@icons-pack/react-simple-icons";
+import { ChevronLeft, ChevronRight, RotateCw, Bookmark, Ellipsis, CircleUser } from "lucide-react"
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { SparklesText } from "@/components/magicui/sparkles-text";
-import { Marquee } from "@/components/magicui/marquee";
 import GlowText from "@/components/ui/glow-text";
-
-const stacks = [SiNextdotjs, SiTypescript, SiJavascript, SiReact, SiTailwindcss, SiCss, SiHtml5, SiDotnet, SiPhp, SiMysql, SiSupabase, SiMarkdown, SiVercel, SiAstro];
+import { FollowerPointerCard } from "@/components/ui/following-pointer";
 
 const BentoCard = ({ children, className = "", style = {}, ...props }: { children: React.ReactNode; className?: string; style?: React.CSSProperties; }) => (
     <div className={`bg-neutral-50/3 rounded-2xl p-10 font-geist ${className}`} {...props} style={{ backgroundImage: `radial-gradient(at 88% 40%, hsl(0,0%,10%,2%) 0px, transparent 85%), radial-gradient(at 49% 30%, hsl(0,0%,10%,2%) 0px, transparent 85%), radial-gradient(at 14% 26%, hsl(0,0%,10%,2%) 0px, transparent 85%), radial-gradient(at 0% 64%, hsl(0,0%,26%,2%) 0px, transparent 85%), radial-gradient(at 41% 94%, hsl(0,0%,36%,2%) 0px, transparent 85%), radial-gradient(at 100% 99%, hsl(0,0%,13%,2%) 0px, transparent 85%)`, ...style }}>
         {children}
     </div>
 );
-
-const IconCard = ({ Icon }: { Icon: React.ComponentType<React.SVGProps<SVGSVGElement>> }) => {
-    return (
-        <div className="flex items-center justify-center w-20 h-20 rounded-2xl border border-white/5 bg-white/1 transition-all duration-300 hover:scale-105">
-            <div className="will-change-transform transition-all duration-300 hover:scale-105">
-                <Icon className="w-7.5 h-7.5 text-white drop-shadow-[0_0_5px_white]" />
-            </div>
-        </div>
-    );
-};
 
 export default function About() {
     return (
@@ -34,7 +22,7 @@ export default function About() {
                     <BentoCard className="col-span-4 row-span-4">
                         <div className="flex flex-row items-center justify-between h-full w-full gap-x-4">
                             <div className="flex flex-col">
-                                <p className="text-neutral-100 text-5xl font-bold mb-2">Profile</p>
+                                <p className="text-neutral-100 text-3xl md:text-4xl font-bold mb-2">Profile</p>
                                 <p className="text-neutral-400 text-base md:text-base leading-relaxed font-inter">
                                     My name is Rion. I am a web developer focusing on both front-end and back-end, living in Sapporo. As a hobby, I also run a channel with over 3,000 subscribers and more than 1.3M total views. I also enjoy playing Tetris in my free time.
                                 </p>
@@ -58,59 +46,63 @@ export default function About() {
                     </BentoCard>
 
                     <BentoCard className="col-span-2 row-span-4 relative p-6 flex flex-col">
-                        <div className="relative flex flex-col h-full">
-                            <Image src="/assets/zisty.svg" alt="zisty" width={500} height={500} className="drop-shadow-[0_0_50px_rgba(255,255,255,0.7)] absolute top-1/2 left-1/2 w-full h-full pb-7 object-contain opacity-20 z-0 -translate-x-1/2 -translate-y-1/2" />
-                            <div className="flex-1 flex items-center justify-center mb-4 z-10">
-                                <div className="*:data-[slot=avatar]:ring-neutral-800 flex -space-x-2 *:data-[slot=avatar]:ring-2 *:data-[slot=avatar]:grayscale">
-                                    <Avatar>
-                                        <AvatarImage src="https://pbs.twimg.com/profile_images/1914457806679498756/gi2pV6jy_400x400.jpg" alt="@ri0n_dev" />
-                                        <AvatarFallback>RI</AvatarFallback>
-                                    </Avatar>
-                                    <Avatar>
-                                        <AvatarImage src="https://pbs.twimg.com/profile_images/1879463762627072000/WnD4sJ1V_400x400.jpg" alt="@tanahiro2010" />
-                                        <AvatarFallback>TH</AvatarFallback>
-                                    </Avatar>
-                                    <Avatar>
-                                        <AvatarImage src="https://cdn.discordapp.com/avatars/1004348660181630977/6445e3f6eddfbad4b0130e9680552673.webp?size=1024" alt="@kazu" />
-                                        <AvatarFallback>KZ</AvatarFallback>
-                                    </Avatar>
-                                    <Avatar>
-                                        <AvatarImage src="https://pbs.twimg.com/profile_images/1772492028636737536/bClftlxv_400x400.jpg" alt="@syobosyobonn" />
-                                        <AvatarFallback>SY</AvatarFallback>
-                                    </Avatar>
-                                    <Avatar>
-                                        <AvatarImage src="https://9z5q.github.io/lovelang.png" alt="@sigma" />
-                                        <AvatarFallback>SG</AvatarFallback>
-                                    </Avatar>
-                                    <Avatar>
-                                        <AvatarImage src="https://pbs.twimg.com/profile_images/1863135999087505408/5qjunahh_400x400.jpg" alt="@xxtomm" />
-                                        <AvatarFallback>TM</AvatarFallback>
-                                    </Avatar>
-                                    <Avatar>
-                                        <AvatarImage src="https://pbs.twimg.com/profile_images/1915770562779209728/yZyDjjpC_400x400.jpg" alt="@rai" />
-                                        <AvatarFallback>RA</AvatarFallback>
-                                    </Avatar>
-                                    <Avatar>
-                                        <AvatarImage src="https://pbs.twimg.com/profile_images/1873678657379774464/_IXeWAJ0_400x400.jpg" alt="@umaidango" />
-                                        <AvatarFallback>UM</AvatarFallback>
-                                    </Avatar>
-                                    <Avatar>
-                                        <AvatarImage src="https://cdn.discordapp.com/avatars/1381227903508811848/0cb68ff304e2db706f4bb98a60b9a64a.webp?size=512" alt="@yunai" />
-                                        <AvatarFallback>YN</AvatarFallback>
-                                    </Avatar>
-                                    <Avatar>
-                                        <AvatarImage src="https://pbs.twimg.com/profile_images/1773615356420239360/UglquU_j_400x400.jpg" alt="@takoyaki" />
-                                        <AvatarFallback>TK</AvatarFallback>
-                                    </Avatar>
+                        <FollowerPointerCard
+
+                        >
+                            <div className="relative flex flex-col h-full">
+                                <Image src="/assets/zisty.svg" alt="zisty" width={500} height={500} className="drop-shadow-[0_0_50px_rgba(255,255,255,0.7)] absolute top-1/2 left-1/2 w-full h-full pb-7 object-contain opacity-20 z-0 -translate-x-1/2 -translate-y-1/2" />
+                                <div className="flex-1 flex items-center justify-center mb-4 z-10">
+                                    <div className="*:data-[slot=avatar]:ring-neutral-800 flex -space-x-2 *:data-[slot=avatar]:ring-2 *:data-[slot=avatar]:grayscale">
+                                        <Avatar>
+                                            <AvatarImage src="https://pbs.twimg.com/profile_images/1914457806679498756/gi2pV6jy_400x400.jpg" alt="@ri0n_dev" />
+                                            <AvatarFallback>RI</AvatarFallback>
+                                        </Avatar>
+                                        <Avatar>
+                                            <AvatarImage src="https://pbs.twimg.com/profile_images/1879463762627072000/WnD4sJ1V_400x400.jpg" alt="@tanahiro2010" />
+                                            <AvatarFallback>TH</AvatarFallback>
+                                        </Avatar>
+                                        <Avatar>
+                                            <AvatarImage src="https://cdn.discordapp.com/avatars/1004348660181630977/6445e3f6eddfbad4b0130e9680552673.webp?size=1024" alt="@kazu" />
+                                            <AvatarFallback>KZ</AvatarFallback>
+                                        </Avatar>
+                                        <Avatar>
+                                            <AvatarImage src="https://pbs.twimg.com/profile_images/1772492028636737536/bClftlxv_400x400.jpg" alt="@syobosyobonn" />
+                                            <AvatarFallback>SY</AvatarFallback>
+                                        </Avatar>
+                                        <Avatar>
+                                            <AvatarImage src="https://9z5q.github.io/lovelang.png" alt="@sigma" />
+                                            <AvatarFallback>SG</AvatarFallback>
+                                        </Avatar>
+                                        <Avatar>
+                                            <AvatarImage src="https://pbs.twimg.com/profile_images/1863135999087505408/5qjunahh_400x400.jpg" alt="@xxtomm" />
+                                            <AvatarFallback>TM</AvatarFallback>
+                                        </Avatar>
+                                        <Avatar>
+                                            <AvatarImage src="https://pbs.twimg.com/profile_images/1915770562779209728/yZyDjjpC_400x400.jpg" alt="@rai" />
+                                            <AvatarFallback>RA</AvatarFallback>
+                                        </Avatar>
+                                        <Avatar>
+                                            <AvatarImage src="https://pbs.twimg.com/profile_images/1873678657379774464/_IXeWAJ0_400x400.jpg" alt="@umaidango" />
+                                            <AvatarFallback>UM</AvatarFallback>
+                                        </Avatar>
+                                        <Avatar>
+                                            <AvatarImage src="https://cdn.discordapp.com/avatars/1381227903508811848/0cb68ff304e2db706f4bb98a60b9a64a.webp?size=512" alt="@yunai" />
+                                            <AvatarFallback>YN</AvatarFallback>
+                                        </Avatar>
+                                        <Avatar>
+                                            <AvatarImage src="https://pbs.twimg.com/profile_images/1773615356420239360/UglquU_j_400x400.jpg" alt="@takoyaki" />
+                                            <AvatarFallback>TK</AvatarFallback>
+                                        </Avatar>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div className="space-y-4">
-                            <h2 className="text-neutral-100 text-3xl md:text-4xl font-bold">Team</h2>
-                            <p className="text-neutral-400 text-sm md:text-base leading-relaxed font-geist">
-                                It&apos;s a team mainly composed of student developers. I founded the team and serve as its owner.
-                            </p>
-                        </div>
+                            <div className="space-y-4">
+                                <h2 className="text-neutral-100 text-3xl md:text-4xl font-bold">Team</h2>
+                                <p className="text-neutral-400 text-sm md:text-base leading-relaxed font-geist">
+                                    It&apos;s a team mainly composed of student developers. I founded the team and serve as its owner.
+                                </p>
+                            </div>
+                        </FollowerPointerCard>
                     </BentoCard>
                 </div>
 
@@ -119,7 +111,7 @@ export default function About() {
                         <div className="relative flex flex-col h-full pb-3">
                             <SparklesText colors={{ first: "#fff", second: "#a3a3a3" }} className="w-full h-full flex items-center justify-center">
                                 <div className="py-3 px-1 w-full h-full">
-                                    <div className="w-full h-full rounded-md border border-neutral-800 drop-shadow-[0_0_40px_white] overflow-hidden">
+                                    <div className="w-full h-full rounded-md border border-neutral-800 overflow-hidden">
                                         <div className="relative w-full h-7 pt-0.5 pb-0.5 border-b border-neutral-800 px-2">
                                             <div className="absolute left-2 top-0 h-full flex items-center gap-1">
                                                 <ChevronLeft size={12} color="#737373" />
@@ -132,7 +124,7 @@ export default function About() {
                                             <div className="flex gap-1 justify-center items-center h-full">
                                                 <Bookmark size={12} color="#737373" />
                                                 <div className="px-10 border border-neutral-800 rounded-sm flex items-center">
-                                                    <div className="text-[10px] text-neutral-200">www.ri0n.dev</div>
+                                                    <div className="text-[10px] text-neutral-200 drop-shadow-[0_0_10px_white]">www.ri0n.dev</div>
                                                 </div>
                                             </div>
                                         </div>
@@ -148,58 +140,48 @@ export default function About() {
                         </div>
                     </BentoCard>
 
-                    <BentoCard className="col-span-4 row-span-4 relative p-6 pt-4 flex flex-col">
-                        <div className="relative flex flex-col h-full pb-3 mb-3 overflow-hidden items-center justify-end">
-                            <div className="relative flex h-96 w-full flex-row items-center justify-center gap-4 overflow-hidden [perspective:300px]">
-                                <div className="flex flex-row items-center gap-2" style={{ transform: "translateX(-100px) translateY(0px) translateZ(-100px) rotateX(20deg) rotateY(-10deg) rotateZ(20deg)", }}>
-                                    <Marquee vertical className="[--duration:20s]">
-                                        {stacks.map((Icon, i) => (
-                                            <IconCard key={i} Icon={Icon} />
-                                        ))}
-                                    </Marquee>
-                                    <Marquee reverse className="[--duration:20s]" vertical>
-                                        {stacks.map((Icon, i) => (
-                                            <IconCard key={i} Icon={Icon} />
-                                        ))}
-                                    </Marquee>
-                                    <Marquee reverse className="[--duration:20s]" vertical>
-                                        {stacks.map((Icon, i) => (
-                                            <IconCard key={i} Icon={Icon} />
-                                        ))}
-                                    </Marquee>
-                                    <Marquee className="[--duration:20s]" vertical>
-                                        {stacks.map((Icon, i) => (
-                                            <IconCard key={i} Icon={Icon} />
-                                        ))}
-                                    </Marquee>
-                                    <Marquee reverse className="[--duration:20s]" vertical>
-                                        {stacks.map((Icon, i) => (
-                                            <IconCard key={i} Icon={Icon} />
-                                        ))}
-                                    </Marquee>
-                                    <Marquee className="[--duration:20s]" vertical>
-                                        {stacks.map((Icon, i) => (
-                                            <IconCard key={i} Icon={Icon} />
-                                        ))}
-                                    </Marquee>
-                                    <Marquee reverse className="[--duration:20s]" vertical>
-                                        {stacks.map((Icon, i) => (
-                                            <IconCard key={i} Icon={Icon} />
-                                        ))}
-                                    </Marquee>
-                                    <Marquee className="[--duration:20s]" vertical>
-                                        {stacks.map((Icon, i) => (
-                                            <IconCard key={i} Icon={Icon} />
-                                        ))}
-                                    </Marquee>
+                    <BentoCard className="col-span-4 row-span-4 relative p-6 pt-6 flex flex-col gap-y-2">
+                        <div className="relative flex flex-col h-0 flex-grow overflow-hidden gap-y-3">
+                            <div className="flex items-top gap-3">
+                                <CircleUser color="#d4d4d4" className="w-6 h-6 flex-shrink-0" />
+                                <div className="flex flex-col gap-y-1 flex-1">
+                                    <div className="w-fit max-w-[calc(100%-2rem)] bg-neutral-800/50 text-neutral-300 text-sm px-3 py-2 rounded-sm rounded-bl-none">
+                                        <p>I'd like to request the creation of a website.</p>
+                                    </div>
+                                    <div className="w-fit max-w-[calc(100%-2rem)] bg-neutral-800/50 text-neutral-300 text-sm px-3 py-2 rounded-sm rounded-tl-none">
+                                        <p>Where should I contact you?</p>
+                                    </div>
                                 </div>
                             </div>
 
+                            <div className="flex flex-row-reverse items-top gap-3">
+                                <Image src={"/assets/icon.webp"} alt="Rion" width={24} height={24} className="w-6 h-6 rounded-full" />
+                                <div className="flex flex-col gap-y-1 items-end flex-1">
+                                    <div className="w-fit max-w-[calc(100%-2rem)] bg-neutral-800/50 text-neutral-300 text-sm px-3 py-2 rounded-sm rounded-br-none">
+                                        <p>Please contact me via email, X, or Discord.</p>
+                                    </div>
+                                    <div className="w-fit max-w-[calc(100%-2rem)] bg-neutral-800/50 text-neutral-300 text-sm px-3 py-2 rounded-sm rounded-tr-none">
+                                        <p>The price starts from $~.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="flex items-top gap-3">
+                                <CircleUser color="#d4d4d4" className="w-6 h-6 flex-shrink-0" />
+                                <div className="flex flex-col gap-y-1 flex-1">
+                                    <div className="w-fit max-w-[calc(100%-2rem)] bg-neutral-800/50 text-neutral-300 text-sm px-3 py-2 rounded-sm rounded-bl-none">
+                                        <p>Ok, Thank you.</p>
+                                    </div>
+                                    <div className="w-fit max-w-[calc(100%-2rem)] bg-neutral-800/50 text-neutral-300 text-sm px-3 py-2 rounded-sm rounded-tl-none">
+                                        <p>Can you make a cool website like ri0n.dev for me?</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div className="space-y-4">
-                            <h2 className="text-neutral-100 text-3xl md:text-4xl font-bold">Skill</h2>
-                            <p className="text-neutral-400 text-sm md:text-base leading-relaxed font-geist">
-                                Here are the services, languages, and frameworks I can work with.
+                            <h2 className="text-neutral-100 text-3xl md:text-4xl font-bold">Get in touch</h2>
+                            <p className="text-neutral-400 text-sm md:text-base leading-relaxed font-inter">
+                                If you'd like to work with me, feel free to get in touch. I'm always open to new opportunities.
                             </p>
                         </div>
                     </BentoCard>

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { SiTypescript, SiReact, SiNextdotjs, SiTailwindcss, SiDeno, SiDiscord, SiOpenai } from "@icons-pack/react-simple-icons";
+import { SiTypescript, SiReact, SiNextdotjs, SiFresh, SiTailwindcss, SiDeno, SiDiscord, SiOpenai, SiGooglegemini } from "@icons-pack/react-simple-icons";
 
 const Work = ({ image, alt, role, title, description, icons, }: { image: string; alt: string; role: string; title: string; description: string; icons: React.ComponentType<{ color: string; size: number }>[]; }) => {
     return (
@@ -50,7 +50,7 @@ export default function Works() {
                         role="Backend Developer"
                         title="AI-x"
                         description="AI-x is an AI that operates on Discord, capable of generating both images and text. It supports various models."
-                        icons={[SiTypescript, SiDeno, SiDiscord]}
+                        icons={[SiTypescript, SiDeno, SiFresh, SiDiscord, SiOpenai, SiGooglegemini]}
                     />
                 </Link>
 
