@@ -146,7 +146,7 @@ export default function About() {
                                 <CircleUser color="#d4d4d4" className="w-6 h-6 flex-shrink-0" />
                                 <div className="flex flex-col gap-y-1 flex-1">
                                     <div className="w-fit max-w-[calc(100%-2rem)] bg-neutral-800/50 text-neutral-300 text-sm px-3 py-2 rounded-sm rounded-bl-none">
-                                        <p>I'd like to request the creation of a website.</p>
+                                        <p>I&apos;d like to request the creation of a website.</p>
                                     </div>
                                     <div className="w-fit max-w-[calc(100%-2rem)] bg-neutral-800/50 text-neutral-300 text-sm px-3 py-2 rounded-sm rounded-tl-none">
                                         <p>Where should I contact you?</p>
@@ -181,7 +181,7 @@ export default function About() {
                         <div className="space-y-4">
                             <h2 className="text-neutral-100 text-3xl md:text-4xl font-bold">Get in touch</h2>
                             <p className="text-neutral-400 text-sm md:text-base leading-relaxed font-inter">
-                                If you'd like to work with me, feel free to get in touch. I'm always open to new opportunities.
+                                If you&apos;d like to work with me, feel free to get in touch. I&apos;m always open to new opportunities.
                             </p>
                         </div>
                     </BentoCard>
