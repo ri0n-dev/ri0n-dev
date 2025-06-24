@@ -5,7 +5,6 @@ import { ChevronLeft, ChevronRight, RotateCw, Bookmark, Ellipsis, CircleUser } f
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { SparklesText } from "@/components/magicui/sparkles-text";
 import GlowText from "@/components/ui/glow-text";
-import { FollowerPointerCard } from "@/components/ui/following-pointer";
 
 const BentoCard = ({ children, className = "", style = {}, ...props }: { children: React.ReactNode; className?: string; style?: React.CSSProperties; }) => (
     <div className={`bg-neutral-50/3 rounded-2xl p-10 font-geist ${className}`} {...props} style={{ backgroundImage: `radial-gradient(at 88% 40%, hsl(0,0%,10%,2%) 0px, transparent 85%), radial-gradient(at 49% 30%, hsl(0,0%,10%,2%) 0px, transparent 85%), radial-gradient(at 14% 26%, hsl(0,0%,10%,2%) 0px, transparent 85%), radial-gradient(at 0% 64%, hsl(0,0%,26%,2%) 0px, transparent 85%), radial-gradient(at 41% 94%, hsl(0,0%,36%,2%) 0px, transparent 85%), radial-gradient(at 100% 99%, hsl(0,0%,13%,2%) 0px, transparent 85%)`, ...style }}>
