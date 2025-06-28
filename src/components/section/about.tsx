@@ -4,7 +4,7 @@ import { SiYoutube, SiX, SiGithub, SiDiscord, SiGithubsponsors, SiMisskey, SiZen
 import { ChevronLeft, ChevronRight, RotateCw, Bookmark, Ellipsis, CircleUser } from "lucide-react"
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { SparklesText } from "@/components/magicui/sparkles-text";
-import SvgBeam from "@/components/ui/svgBeam";
+import SvgBeam from "@/components/ui/svg-beam";
 import GlowText from "@/components/ui/glow-text";
 
 const BentoCard = ({ children, className = "", style = {}, ...props }: { children: React.ReactNode; className?: string; style?: React.CSSProperties; }) => (

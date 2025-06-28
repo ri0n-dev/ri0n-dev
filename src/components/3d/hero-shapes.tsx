@@ -6,6 +6,7 @@ import { OrbitControls, useGLTF } from "@react-three/drei"
 import { type Group, MeshStandardMaterial, Mesh } from "three"
 import { Button } from "@/components/ui/button"
 import { Play, Pause } from "lucide-react"
+import { useMobile } from "@/hooks/use-mobile"
 
 useGLTF.preload("/assets/models/hero.glb")
 
@@ -37,17 +38,14 @@ function Model({ isRotating }: ModelProps) {
 
   useEffect(() => {
     const updateScale = () => {
-      const widht = window.innerWidth
-      if (widht < 450) {
+      const width = window.innerWidth
+      if (width < 450) {
         setScale(0.15)
-      }
-      if (widht < 640) {
+      } else if (width < 640) {
         setScale(0.2)
-      }
-      if (widht < 768) {
+      } else if (width < 768) {
         setScale(0.4)
-      }
-      else if (widht < 1025) {
+      } else if (width < 1025) {
         setScale(0.5)
       }
     }
@@ -55,7 +53,7 @@ function Model({ isRotating }: ModelProps) {
     updateScale()
     window.addEventListener("resize", updateScale)
     return () => window.removeEventListener("resize", updateScale)
-  })
+  }, [])
 
   useEffect(() => {
     if (!scene) return
@@ -89,6 +87,7 @@ function Model({ isRotating }: ModelProps) {
 
 export default function Shapes3D() {
   const [isRotating, setIsRotating] = useState(true)
+  const isMobile = useMobile()
 
   const toggleRotation = () => {
     setIsRotating(!isRotating)
@@ -99,27 +98,12 @@ export default function Shapes3D() {
       <Canvas camera={{ position: [0, 0, 5], fov: 50 }} dpr={[1, 2]}>
         <ambientLight intensity={0.3} />
         <directionalLight position={[10, 10, 5]} intensity={1.2} castShadow shadow-mapSize={[512, 512]} />
-
         <Suspense fallback={null}>
           <Model isRotating={isRotating} />
         </Suspense>
-
-        <OrbitControls
-          enableZoom={false}
-          enablePan={false}
-          enableRotate={true}
-          autoRotate={isRotating}
-          autoRotateSpeed={1}
-          makeDefault
-        />
+        <OrbitControls enableZoom={!isMobile} enablePan={!isMobile} enableRotate={!isMobile} autoRotate={isRotating} autoRotateSpeed={1} makeDefault />
       </Canvas>
-
-      <Button
-        onClick={toggleRotation}
-        variant="ghost"
-        className="absolute top-4 right-4 z-10 rounded-3xl hover:bg-white/10 text-white/60 hover:text-white/70"
-        size="sm"
-      >
+      <Button onClick={toggleRotation} variant="ghost" className="absolute top-4 right-4 z-10 rounded-3xl hover:bg-white/10 text-white/60 hover:text-white/70" size="sm">
         {isRotating ? (
           <>
             <Pause className="w-4 h-4 mr-2" />Stop
