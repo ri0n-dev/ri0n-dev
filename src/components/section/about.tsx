@@ -18,7 +18,7 @@ export default function About() {
         <section id="about" className="flex flex-col font-inter relative max-w-300 px-3 w-full overflow-hidden mx-auto">
             <div className="flex flex-col mt-43 justify-center items-center gap-y-4">
                 <h1 className="text-neutral-100 font-cormorant text-5xl md:text-7xl font-bold mb-3 font-pp"><span className="text-neutral-300">About</span> Me</h1>
-                <div className="grid grid-cols-1 sm:grid-cols-2 grid-rows-1 gap-4 lg:grid-cols-6 lg:grid-rows-4 h-[500px] md:h-[340px] lg:h-[400px]">
+                <div className="grid grid-cols-1 sm:grid-cols-2 grid-rows-1 gap-4 lg:grid-cols-6 lg:grid-rows-4 h-[460px] md:h-[340px] lg:h-[400px]">
                     <BentoCard className="col-span-1 row-span-1 lg:col-span-4 lg:row-span-4">
                         <div className="flex flex-row items-center justify-between h-full w-full gap-x-4">
                             <div className="flex flex-col">
