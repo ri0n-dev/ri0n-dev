@@ -4,6 +4,7 @@ import { SiYoutube, SiX, SiGithub, SiDiscord, SiGithubsponsors, SiMisskey, SiZen
 import { ChevronLeft, ChevronRight, RotateCw, Bookmark, Ellipsis, CircleUser } from "lucide-react"
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { SparklesText } from "@/components/magicui/sparkles-text";
+import SvgBeam from "@/components/ui/svgBeam";
 import GlowText from "@/components/ui/glow-text";
 
 const BentoCard = ({ children, className = "", style = {}, ...props }: { children: React.ReactNode; className?: string; style?: React.CSSProperties; }) => (
@@ -14,39 +15,41 @@ const BentoCard = ({ children, className = "", style = {}, ...props }: { childre
 
 export default function About() {
     return (
-        <section id="about" className="flex flex-col font-inter relative max-w-300 w-full overflow-hidden mx-auto">
+        <section id="about" className="flex flex-col font-inter relative max-w-300 px-3 w-full overflow-hidden mx-auto">
             <div className="flex flex-col mt-43 justify-center items-center gap-y-4">
                 <h1 className="text-neutral-100 font-cormorant text-5xl md:text-7xl font-bold mb-3 font-pp"><span className="text-neutral-300">About</span> Me</h1>
-                <div className="grid grid-cols-6 grid-rows-4 gap-4 h-screen max-h-[400px]">
-                    <BentoCard className="col-span-4 row-span-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 grid-rows-1 gap-4 lg:grid-cols-6 lg:grid-rows-4 h-[500px] md:h-[340px] lg:h-[400px]">
+                    <BentoCard className="col-span-1 row-span-1 lg:col-span-4 lg:row-span-4">
                         <div className="flex flex-row items-center justify-between h-full w-full gap-x-4">
                             <div className="flex flex-col">
-                                <p className="text-neutral-100 text-3xl md:text-4xl font-bold mb-2">Profile</p>
-                                <p className="text-neutral-400 text-base md:text-base leading-relaxed font-inter">
+                                <p className="text-neutral-100 text-2xl md:text-3xl lg:text-4xl font-bold mb-2">Profile</p>
+                                <p className="text-neutral-400 text-sm lg:text-base leading-relaxed font-inter">
                                     My name is Rion. I am a web developer focusing on both front-end and back-end, living in Sapporo. As a hobby, I also run a channel with over 3,000 subscribers and more than 1.3M total views. I also enjoy playing Tetris in my free time.
                                 </p>
-                                <div className="flex items-center gap-x-3.5 mt-5">
+                                <div className="flex items-center gap-x-4 lg:gap-x-3.5 mt-5">
                                     <Link href="https://www.youtube.com/@piennu_777" target="_blank" rel="noopener noreferrer">
-                                        <SiYoutube width={23} height={23} className="text-neutral-300" />
+                                        <SiYoutube className="text-neutral-300 w-5 h-5 lg:w-[23px] lg:h-[23px]" />
                                     </Link>
                                     <Link href="https://x.com/ri0n_dev" target="_blank" rel="noopener noreferrer">
-                                        <SiX width={23} height={23} className="text-neutral-300" />
+                                        <SiX className="text-neutral-300 w-5 h-5 lg:w-[23px] lg:h-[23px]" />
                                     </Link>
                                     <Link href="https://github.com/ri0n-dev" target="_blank" rel="noopener noreferrer">
-                                        <SiGithub width={23} height={23} className="text-neutral-300" />
+                                        <SiGithub className="text-neutral-300 w-5 h-5 lg:w-[23px] lg:h-[23px]" />
                                     </Link>
                                     <Link href="https://discord.com/users/851357394976899116" target="_blank" rel="noopener noreferrer">
-                                        <SiDiscord width={23} height={23} className="text-neutral-300" />
+                                        <SiDiscord className="text-neutral-300 w-5 h-5 lg:w-[23px] lg:h-[23px]" />
                                     </Link>
                                 </div>
                             </div>
-                            <Image src={"/assets/me.jpg"} alt="icon" width={650} height={650} className="w-65 h-full object-cover rounded-xl" />
+                            <Image src={"/assets/me.jpg"} alt="icon" width={650} height={650} className="hidden lg:block w-65 h-full object-cover rounded-xl" />
                         </div>
                     </BentoCard>
 
-                    <BentoCard className="col-span-2 row-span-4 relative p-6 flex flex-col">
+                    <BentoCard className="col-span-1 row-span-1 lg:col-span-2 lg:row-span-4 relative flex flex-col">
                         <div className="relative flex flex-col h-full">
-                            <Image src="/assets/zisty.svg" alt="zisty" width={500} height={500} className="drop-shadow-[0_0_50px_rgba(255,255,255,0.7)] absolute top-1/2 left-1/2 w-full h-full pb-7 object-contain opacity-20 z-0 -translate-x-1/2 -translate-y-1/2" />
+                            <div className="absolute inset-0 hidden sm:flex items-center justify-center w-full h-full pb-7 z-0">
+                                <SvgBeam svgPath="/assets/zisty.svg" size={180} dashLength={0.6} duration={2000} strokeWidth={4} strokeColor="#808080" className="pb-2" />
+                            </div>
                             <div className="flex-1 flex items-center justify-center mb-4 z-10">
                                 <div className="*:data-[slot=avatar]:ring-neutral-800 flex -space-x-2 *:data-[slot=avatar]:ring-2 *:data-[slot=avatar]:grayscale">
                                     <Avatar>
@@ -93,7 +96,7 @@ export default function About() {
                             </div>
                         </div>
                         <div className="space-y-4">
-                            <h2 className="text-neutral-100 text-3xl md:text-4xl font-bold">Team</h2>
+                            <p className="text-neutral-100 text-2xl md:text-3xl lg:text-4xl font-bold mb-2">Team</p>
                             <p className="text-neutral-400 text-sm md:text-base leading-relaxed font-geist">
                                 It&apos;s a team mainly composed of student developers. I founded the team and serve as its owner.
                             </p>
@@ -101,23 +104,23 @@ export default function About() {
                     </BentoCard>
                 </div>
 
-                <div className="grid grid-cols-10 grid-rows-4 gap-4 h-screen max-h-[400px]">
-                    <BentoCard className="col-span-4 row-span-4 relative p-6 pt-4 flex flex-col">
+                <div className="grid grid-cols-10 grid-rows-4 gap-4 w-full h-[780px] md:h-[600px] lg:h-[400px]">
+                    <BentoCard className="col-span-10 md:col-span-5 lg:col-span-4 row-span-4 relative p-6 pt-4 flex flex-col">
                         <div className="relative flex flex-col h-full pb-3">
                             <SparklesText colors={{ first: "#fff", second: "#a3a3a3" }} className="w-full h-full flex items-center justify-center">
                                 <div className="py-3 px-1 w-full h-full">
                                     <div className="w-full h-full rounded-md border border-neutral-800 overflow-hidden">
                                         <div className="relative w-full h-7 pt-0.5 pb-0.5 border-b border-neutral-800 px-2">
-                                            <div className="absolute left-2 top-0 h-full flex items-center gap-1">
+                                            <div className="absolute left-2 top-0 h-full hidden md:flex items-center gap-1">
                                                 <ChevronLeft size={12} color="#737373" />
                                                 <ChevronRight size={12} color="#737373" />
                                                 <RotateCw size={12} color="#737373" />
                                             </div>
-                                            <div className="absolute right-2 top-0 h-full flex items-center">
+                                            <div className="absolute right-2 top-0 h-full  hidden md:flex items-center">
                                                 <Ellipsis size={12} color="#737373" />
                                             </div>
                                             <div className="flex gap-1 justify-center items-center h-full">
-                                                <Bookmark size={12} color="#737373" />
+                                                <Bookmark size={12} color="#737373" className="hidden md:block" />
                                                 <div className="px-10 border border-neutral-800 rounded-sm flex items-center">
                                                     <div className="text-[10px] text-neutral-200 drop-shadow-[0_0_10px_white]">www.ri0n.dev</div>
                                                 </div>
@@ -128,14 +131,14 @@ export default function About() {
                             </SparklesText>
                         </div>
                         <div className="space-y-4">
-                            <h2 className="text-neutral-100 text-3xl md:text-4xl font-bold">Stylish</h2>
+                            <h2 className="text-neutral-100 text-2xl md:text-3xl lg:text-4xl font-bold mb-2">Stylish</h2>
                             <p className="text-neutral-400 text-sm md:text-base leading-relaxed font-inter">
                                 I create cool, beautiful, stunning, amazing, and intersting designs.
                             </p>
                         </div>
                     </BentoCard>
 
-                    <BentoCard className="col-span-4 row-span-4 relative p-6 pt-6 flex flex-col gap-y-2">
+                    <BentoCard className="col-span-10 md:col-span-5 lg:col-span-4 row-span-4 relative p-6 pt-6 flex flex-col gap-y-2">
                         <div className="relative flex flex-col h-0 flex-grow overflow-hidden gap-y-3">
                             <div className="flex items-top gap-3">
                                 <CircleUser color="#d4d4d4" className="w-6 h-6 flex-shrink-0" />
@@ -174,14 +177,14 @@ export default function About() {
                             </div>
                         </div>
                         <div className="space-y-4">
-                            <h2 className="text-neutral-100 text-3xl md:text-4xl font-bold">Get in touch</h2>
+                            <h2 className="text-neutral-100 text-2xl md:text-3xl lg:text-4xl font-bold mb-2">Get in touch</h2>
                             <p className="text-neutral-400 text-sm md:text-base leading-relaxed font-inter">
                                 If you&apos;d like to work with me, feel free to get in touch. I&apos;m always open to new opportunities.
                             </p>
                         </div>
                     </BentoCard>
 
-                    <BentoCard className="col-span-2 row-span-2 relative p-1 flex flex-col">
+                    <BentoCard className="col-span-5 lg:col-span-2 row-span-2 relative p-1 flex flex-col">
                         <div className="flex flex-col h-full items-center justify-center text-center">
                             <div className="text-7xl font-bold bg-gradient-to-r from-neutral-700 via-white to-neutral-700 bg-clip-text text-transparent">
                                 1M+
@@ -190,7 +193,7 @@ export default function About() {
                         </div>
                     </BentoCard>
 
-                    <BentoCard className="col-span-2 row-span-2 relative p-1 flex flex-col">
+                    <BentoCard className="col-span-5 lg:col-span-2 row-span-2 relative p-1 flex flex-col">
                         <div className="flex flex-col h-full items-center justify-center text-center">
                             <div className="text-7xl font-bold bg-gradient-to-r from-neutral-700 via-white to-neutral-700 bg-clip-text text-transparent">
                                 3K+
@@ -205,7 +208,7 @@ export default function About() {
                         <GlowText className="text-neutral-100">
                             <div className="flex items-center gap-2">
                                 <SiGithubsponsors color="#f5f5f5" />
-                                <h2 className="text-neutral-100 text-3xl md:text-4xl font-bold">Contributor</h2>
+                                <h2 className="text-neutral-100 text-2xl md:text-3xl lg:text-4xl font-bold">Contributor</h2>
                             </div>
                         </GlowText>
                         <p className="text-neutral-400 text-sm md:text-base leading-relaxed font-geist mt-2">

@@ -3,7 +3,7 @@ import Link from "next/link"
 
 const Footer: React.FC = () => {
     return (
-        <footer className="relative bottom-0 max-w-300 w-full pt-50 z-60 font-inter mx-auto">
+        <footer className="relative bottom-0 max-w-300 px-3 w-full pt-50 z-60 font-inter mx-auto">
             <div className="relative w-full">
                 <Image src={"/assets/ri0n.dev.webp"} alt="Rion" width={1920} height={300} className="w-full opacity-80 object-contain" />
             </div>

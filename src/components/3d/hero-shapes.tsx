@@ -16,6 +16,7 @@ interface ModelProps {
 function Model({ isRotating }: ModelProps) {
   const { scene } = useGLTF("/assets/models/hero.glb")
   const meshRef = useRef<Group>(null)
+  const [scale, setScale] = useState(0.5)
 
   const optimizedMaterial = useMemo(
     () =>
@@ -32,6 +33,28 @@ function Model({ isRotating }: ModelProps) {
       meshRef.current.rotation.y += 0.01
       meshRef.current.rotation.x += 0.005
     }
+  })
+
+  useEffect(() => {
+    const updateScale = () => {
+      const widht = window.innerWidth
+      if (widht < 450) {
+        setScale(0.15)
+      }
+      if (widht < 640) {
+        setScale(0.2)
+      }
+      if (widht < 768) {
+        setScale(0.4)
+      }
+      else if (widht < 1025) {
+        setScale(0.5)
+      }
+    }
+
+    updateScale()
+    window.addEventListener("resize", updateScale)
+    return () => window.removeEventListener("resize", updateScale)
   })
 
   useEffect(() => {
@@ -59,7 +82,7 @@ function Model({ isRotating }: ModelProps) {
 
   return (
     <group ref={meshRef}>
-      <primitive object={scene} scale={0.5} />
+      <primitive object={scene} scale={scale} />
     </group>
   )
 }
