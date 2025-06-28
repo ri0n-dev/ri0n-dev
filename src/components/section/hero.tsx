@@ -4,7 +4,7 @@ import Shapes3D from "@/components/3d/hero-shapes";
 
 export default function Hero() {
     return (
-        <section id="home" className="flex flex-col relative max-w-300 px-3 w-full min-h-screen overflow-hidden mx-auto">
+        <section id="home" className="flex flex-col relative max-w-300 px-3 w-full min-h-auto lg:min-h-screen overflow-visible mx-auto">
             <div className="flex text-4xl sm:text-5xl md:text-6xl lg:text-7xl flex-col mt-28 sm:mt-45 justify-center items-center gap-y-0 sm:gap-y-3">
                 <div className="flex items-center gap-4">
                     <h1 className="text-neutral-100 font-(family-name:--font-pp) font-bold">Hi, I&apos;m</h1>
@@ -20,7 +20,7 @@ export default function Hero() {
                     <h1 className="text-neutral-100 font-(family-name:--font-pp) font-bold">Web Developer</h1>
                 </div>
             </div>
-            <div className="flex flex-col bg-neutral-50/1 mt-18 sm:mt-25 justify-center items-center rounded-4xl gap-y-3" style={{ backgroundImage: `radial-gradient(at 88% 40%, hsl(0,0%,10%,2%) 0px, transparent 85%), radial-gradient(at 49% 30%, hsl(0,0%,10%,2%) 0px, transparent 85%), radial-gradient(at 14% 26%, hsl(0,0%,10%,2%) 0px, transparent 85%), radial-gradient(at 0% 64%, hsl(0,0%,26%,2%) 0px, transparent 85%), radial-gradient(at 41% 94%, hsl(0,0%,36%,2%) 0px, transparent 85%), radial-gradient(at 100% 99%, hsl(0,0%,13%,2%) 0px, transparent 85%)` }}>
+            <div className="hidden lg:flex flex-col bg-neutral-50/1 mt-18 sm:mt-25 justify-center items-center rounded-4xl gap-y-3" style={{ backgroundImage: `radial-gradient(at 88% 40%, hsl(0,0%,10%,2%) 0px, transparent 85%), radial-gradient(at 49% 30%, hsl(0,0%,10%,2%) 0px, transparent 85%), radial-gradient(at 14% 26%, hsl(0,0%,10%,2%) 0px, transparent 85%), radial-gradient(at 0% 64%, hsl(0,0%,26%,2%) 0px, transparent 85%), radial-gradient(at 41% 94%, hsl(0,0%,36%,2%) 0px, transparent 85%), radial-gradient(at 100% 99%, hsl(0,0%,13%,2%) 0px, transparent 85%)` }}>
                 <Shapes3D />
             </div>
         </section>
