@@ -5,6 +5,7 @@ import { Analytics } from "@vercel/analytics/next"
 import Background from "@/components/layout/background";
 import Header from "@/components/layout/header";
 import Footer from "@/components/layout/footer"
+import { BlurFade } from "@/components/magicui/blur-fade";
 import "@/styles/globals.css";
 
 export { metadata as metadata } from "@/consts/metadata";
@@ -25,14 +26,16 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       <body className={`bg-neutral-950 ${inter.variable} ${ppEditorialNew.variable} antialiased`}>
         <Background>
           <Header />
-          {children}
+          <BlurFade>
+            {children}
+          </BlurFade>
           <Footer />
         </Background>
 
-        {/* Vercel */}
+        {/* Vercel */ }
         <SpeedInsights />
         <Analytics />
-      </body>
-    </html>
+      </body >
+    </html >
   )
 }
