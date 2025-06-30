@@ -26,6 +26,18 @@ export default function Privacy() {
 
       <div className="flex flex-col mt-10 pb-15 text-left justify-center items-left gap-y-4 border-b border-neutral-900">
         <h2 className="text-3xl text-neutral-300 font-semibold tracking-tight">
+          データの収集
+        </h2>
+        <p className="text-neutral-300 leading-7 [&:not(:first-child)]:mt-6">
+          ユーザーが送信したデータは、サービスの改善やユーザーの体験向上のために使用されます。<br />
+          保存されるデータには、ユーザーを特定することのできる情報は含まれないよう、匿名かされて保存されます。
+          <br /><br />
+          AI-xでは、ユーザーの会話を忘れないようにする目的で、ユーザーの会話が記録されています。保存されるデータに、ディスプレイ名やユーザー名などは含まれません。データを第三者に共有することもありません。
+        </p>
+      </div>
+
+      <div className="flex flex-col mt-10 pb-15 text-left justify-center items-left gap-y-4 border-b border-neutral-900">
+        <h2 className="text-3xl text-neutral-300 font-semibold tracking-tight">
           削除の申し立て
         </h2>
         <p className="text-neutral-300 leading-7 [&:not(:first-child)]:mt-6">
