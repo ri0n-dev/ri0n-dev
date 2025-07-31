@@ -1,6 +1,6 @@
 {
-  "name": "v2",
-  "version": "0.1.0",
+  "name": "ri0n-website",
+  "version": "0.2.0",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
