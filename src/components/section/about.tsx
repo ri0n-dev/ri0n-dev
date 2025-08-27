@@ -1,4 +1,4 @@
-import { Musics } from "@/components/ui/musics"
+import { CardGrid } from "@/components/ui/card-grid"
 
 export function About() {
     return (
@@ -20,20 +20,7 @@ export function About() {
                 <span className="text-neutral-900 dark:text-neutral-100">connecting</span> with you! :)
             </p>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-10">
-                <div className="relative p-6 border-2 border-neutral-200 dark:border-neutral-800/80 rounded-xl bg-neutral-50 dark:bg-neutral-950">
-                    <div className="absolute top-2 left-2 text-[10px] bg-neutral-950 dark:bg-neutral-50/5 rounded-lg px-2 py-1 text-neutral-600 dark:text-neutral-300">Favorite Songs</div>
-                </div>
-
-                <div className="relative p-6 border-2 border-neutral-200 dark:border-neutral-800/80 rounded-xl bg-neutral-50 dark:bg-neutral-950 overflow-hidden flex items-center justify-center">
-                    <div className="absolute top-2 left-2 text-[10px] bg-neutral-950 dark:bg-neutral-50/5 rounded-lg px-2 py-1 text-neutral-600 dark:text-neutral-300">Favorite Songs</div>
-                    <Musics />
-                </div>
-
-                <div className="relative p-6 border-2 border-neutral-200 dark:border-neutral-800/80 rounded-xl bg-neutral-50 dark:bg-neutral-950">
-                    <div className="absolute top-2 left-2 text-[10px] bg-neutral-950 dark:bg-neutral-50/5 rounded-lg px-2 py-1 text-neutral-600 dark:text-neutral-300">Favorite Songs</div>
-                </div>
-            </div>
+            <CardGrid />
         </section>
     )
 }

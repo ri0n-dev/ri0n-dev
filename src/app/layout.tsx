@@ -5,7 +5,6 @@
 
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import localFont from "next/font/local";
 import { ThemeProvider } from "@/components/provider/theme";
 import { Header } from "@/components/layout/header";
 import "@/styles/globals.css";
@@ -20,13 +19,8 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const ppEditorialNew = localFont({
-  src: '../../public/assets/fonts/PPEditorialNew-Ultralight-BF644b21500d0c0.otf',
-  variable: '--font-pp',
-})
-
 const url = "https://ri0n.dev";
-const icon = "/favicon.png";
+const icon = "/favicon.ico";
 const ogpIcon = "/ogp.webp";
 const siteName = "Rion";
 const description = "I am a student working as an engineer, doing web development and app development.";
@@ -63,11 +57,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`bg-neutral-50 dark:bg-neutral-950 ${geistSans.variable} ${geistMono.variable} ${ppEditorialNew.variable} antialiased`}>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange storageKey="acme-theme">
-          <Header />
-          {children}
-        </ThemeProvider>
+      <body className={`bg-neutral-50 dark:bg-neutral-950 ${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <div className="flex flex-col max-w-[720px] mx-auto px-4">
+          <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange storageKey="acme-theme">
+            <Header />
+            {children}
+          </ThemeProvider>
+        </div>
       </body>
     </html>
   );
