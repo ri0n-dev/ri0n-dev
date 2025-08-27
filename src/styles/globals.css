@@ -120,9 +120,3 @@
     @apply bg-background text-foreground;
   }
 }
-
-@media (max-width: 490px) {
-  .phone {
-    display: block;
-  }
-}
