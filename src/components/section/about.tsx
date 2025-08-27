@@ -4,7 +4,7 @@ export function About() {
     return (
         <section className="flex flex-col gap-y-3 items-left justify-center mt-15 text-neutral-500 dark:text-neutral-400 text-base text-left">
             <p>
-                I'm a <span className="text-neutral-900 dark:text-neutral-100">developer</span> who enjoys{" "}
+                I&apos;m a <span className="text-neutral-900 dark:text-neutral-100">developer</span> who enjoys{" "}
                 <span className="text-neutral-900 dark:text-neutral-50">web development</span> and{" "}
                 <span className="text-neutral-900 dark:text-neutral-100">design</span>.
             </p>

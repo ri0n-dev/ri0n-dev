@@ -3,7 +3,7 @@
 import type { FC } from "react";
 import { useTheme } from "next-themes";
 import { Button } from "@/components/ui/button"
-import { Monitor, Moon, Sun } from "lucide-react";
+import { Moon, Sun } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface ThemeToggleProps {

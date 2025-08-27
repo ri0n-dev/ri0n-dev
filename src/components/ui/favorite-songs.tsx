@@ -7,6 +7,16 @@ import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } f
 import { Button } from "@/components/ui/button"
 import { SiSpotify } from "@icons-pack/react-simple-icons"
 
+interface Album {
+    src: string;
+    alt: string;
+    title: string;
+    artist: string;
+    position: string;
+    zIndex: number;
+    url: string;
+}
+
 export function Songs() {
   const albums = [
     [
@@ -99,15 +109,7 @@ export function Songs() {
   ]
   const [currentSetIndex, setCurrentSetIndex] = useState(0)
   const [isTransitioning, setIsTransitioning] = useState(false)
-  const [selectedAlbum, setSelectedAlbum] = useState<{
-    src: string
-    alt: string
-    title: string
-    artist: string
-    position: string
-    zIndex: number
-    url: string
-  } | null>(null)
+  const [selectedAlbum, setSelectedAlbum] = useState<Album | null>(null)
   const [isDialogOpen, setIsDialogOpen] = useState(false)
 
   useEffect(() => {
@@ -127,7 +129,7 @@ export function Songs() {
 
   const currentAlbums = albums[currentSetIndex]
 
-  const handleImageClick = (album: any) => {
+  const handleImageClick = (album: Album) => {
     setSelectedAlbum(album)
     setIsDialogOpen(true)
   }
