@@ -7,9 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "pages:build": "npm run build",
-    "pages:dev": "npx wrangler pages dev out --compatibility-date=2024-01-01",
-    "pages:deploy": "npx wrangler pages deploy out"
+    "pages:build": "npx @cloudflare/next-on-pages@1",
+    "pages:dev": "npx wrangler pages dev .vercel/output/static --compatibility-date=2024-01-01",
+    "pages:deploy": "npx wrangler pages deploy .vercel/output/static"
   },
   "dependencies": {
     "@icons-pack/react-simple-icons": "^13.7.0",
