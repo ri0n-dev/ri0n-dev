@@ -6,7 +6,10 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "pages:build": "npm run build",
+    "pages:dev": "npx wrangler pages dev out --compatibility-date=2024-01-01",
+    "pages:deploy": "npx wrangler pages deploy out"
   },
   "dependencies": {
     "@icons-pack/react-simple-icons": "^13.7.0",
@@ -25,6 +28,7 @@
     "tailwind-merge": "^3.3.1"
   },
   "devDependencies": {
+    "@cloudflare/next-on-pages": "^1.13.14",
     "@eslint/eslintrc": "^3.3.1",
     "@tailwindcss/postcss": "^4.1.12",
     "@types/node": "^20.19.11",
@@ -34,6 +38,7 @@
     "eslint-config-next": "15.4.4",
     "tailwindcss": "^4.1.12",
     "tw-animate-css": "^1.3.7",
-    "typescript": "^5.9.2"
+    "typescript": "^5.9.2",
+    "wrangler": "^4.33.1"
   }
 }
