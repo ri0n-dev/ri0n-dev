@@ -127,3 +127,13 @@
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+@media (min-width: 530px) {
+  .phone-block {
+    display: block;
+  }
+
+  .phone-hidden {
+    display: none;
+  }
+}
