@@ -65,7 +65,7 @@ export default function RootLayout({
             <Header />
             {children}
           </ThemeProvider>
-          <Analytics mode="production" />;
+          <Analytics mode="production" />
           <SpeedInsights />
         </div>
       </body>
