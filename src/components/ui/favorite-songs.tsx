@@ -8,13 +8,13 @@ import { Button } from "@/components/ui/button"
 import { SiSpotify } from "@icons-pack/react-simple-icons"
 
 interface Album {
-    src: string;
-    alt: string;
-    title: string;
-    artist: string;
-    position: string;
-    zIndex: number;
-    url: string;
+  src: string;
+  alt: string;
+  title: string;
+  artist: string;
+  position: string;
+  zIndex: number;
+  url: string;
 }
 
 export function Songs() {
@@ -114,18 +114,20 @@ export function Songs() {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setTimeout(() => {
-        setIsTransitioning(true)
-      }, 3000)
+      setIsTransitioning(true)
 
       setTimeout(() => {
         setCurrentSetIndex((prevIndex) => (prevIndex + 1) % albums.length)
-        setIsTransitioning(false)
-      }, 3500)
-    }, 3500)
+
+        setTimeout(() => {
+          setIsTransitioning(false)
+        }, 100)
+      }, 400)
+    }, 4000)
 
     return () => clearInterval(interval)
   }, [albums.length])
+
 
   const currentAlbums = albums[currentSetIndex]
 
@@ -136,21 +138,37 @@ export function Songs() {
 
   return (
     <div className="relative w-full h-full flex items-center justify-center">
-      <div className={`relative w-[680px] h-[200px] transition-all duration-500 ${isTransitioning ? "blur-sm" : "blur-none"}`}>
-        {currentAlbums.map((album) => (
-          <div key={album.url} className="absolute w-23 h-23 rounded-xl border-3 border-white dark:border-neutral-800 shadow-lg transition-all duration-500 ease-in-out cursor-pointer hover:scale-102" style={{ transform: album.position, zIndex: album.zIndex, top: "50%", left: "50%" }} onClick={() => handleImageClick(album)}>
-            <div className="relative group">
+      <div className="relative w-[680px] h-[200px] overflow-hidden">
+        {currentAlbums.map((album, index) => (
+          <div
+            key={`${currentSetIndex}-${album.url}`}
+            className={`absolute w-23 h-23 rounded-xl border-3 border-white dark:border-neutral-800 shadow-lg cursor-pointer hover:scale-105 hover:shadow-xl
+              transition-all duration-700 ease-out
+              ${isTransitioning ? "opacity-0 scale-95 blur-sm" : "opacity-100 scale-100 blur-none"}`}
+            style={{
+              transform: album.position,
+              zIndex: album.zIndex,
+              top: "50%",
+              left: "50%",
+              transformOrigin: "center center",
+              transitionDelay: isTransitioning ? "0ms" : `${index * 100}ms`,
+            }}
+            onClick={() => handleImageClick(album)}
+          >
+            <div className="relative group overflow-hidden rounded-lg">
               <Image
-                src={album.src}
+                src={album.src || "/placeholder.svg"}
                 alt={album.alt}
                 width={640}
                 height={640}
                 className="rounded-lg object-cover"
               />
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300 rounded-lg" />
             </div>
           </div>
         ))}
       </div>
+
       <div className="absolute bottom-4 flex space-x-2">
         {albums.map((_, index) => (
           <div key={index} className={`w-1 h-1 rounded-full transition-all duration-300 ${index === currentSetIndex ? "bg-neutral-400 dark:bg-neutral-500 scale-125" : "bg-neutral-300 dark:bg-neutral-600"}`} />
