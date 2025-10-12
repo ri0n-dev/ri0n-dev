@@ -9,7 +9,7 @@ const TimelineItem: React.FC<TimelineItemProps> = ({ date, title, description })
     <div className="relative flex items-start">
       <div className="absolute left-[7.5px] top-0 w-2 h-2 bg-neutral-50 shadow rounded-full mt-1.5 z-10"></div>
       <div className="ml-8">
-        <p className="text-[11px] text-neutral-500">{date}</p>
+        <p className="text-[10px] text-neutral-500">{date}</p>
         <h3 className="text-sm font-semibold">{title}</h3>
         <p className="mt-1 text-xs text-neutral-500">{description}</p>
       </div>
