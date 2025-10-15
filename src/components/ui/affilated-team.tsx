@@ -3,11 +3,6 @@ import Timeline from "@/components/ui/timeline"
 export function Team() {
   const timelineItems = [
     {
-      date: 'Dec 11, 2024',
-      title: 'Bakey',
-      description: 'We provide services that connect people.'
-    },
-    {
       date: 'Jun 7, 2021',
       title: 'Zisty',
       description: 'I founded Zisty and currently serve as its owner.'
