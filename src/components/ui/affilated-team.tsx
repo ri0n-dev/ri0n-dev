@@ -10,7 +10,7 @@ export function Team() {
   ];
 
   return (
-    <div className="container mx-auto p-4 mt-11 h-full">
+    <div className="container mx-auto p-4 mt-20 h-full">
       <Timeline items={timelineItems} />
     </div>
   );
