@@ -1,4 +1,3 @@
-import { CardGrid } from "@/components/ui/card-grid"
 import { BlurFade } from "@/components/magicui/blur-fade";
 
 export function About() {
@@ -26,8 +25,6 @@ export function About() {
                     <span className="text-neutral-900 dark:text-neutral-100">connecting</span> with you! :)
                 </p>
             </BlurFade>
-
-            <CardGrid />
         </section>
     )
 }
