@@ -13,7 +13,7 @@ interface ThemeToggleProps {
 export const ThemeToggle: FC<ThemeToggleProps> = (props) => {
     const { setTheme, theme } = useTheme();
     return (
-        <Button variant="outline" size="icon" className="size-8" onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>
+        <Button variant="outline" size="icon" className="size-8 rounded-md" onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>
             {theme === "dark" ? (
                 <Moon
                     className={cn("size-4", props.className)}

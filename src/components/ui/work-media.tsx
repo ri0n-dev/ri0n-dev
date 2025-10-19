@@ -18,6 +18,7 @@ type WorkMediaProps = {
 const baseMediaClass =
     "mt-3 rounded-md border-3 border-neutral-200 dark:border-neutral-800/80 w-full";
 
+
 export function WorkMedia({
     videoSrc,
     videoAriaLabel,
