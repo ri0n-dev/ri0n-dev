@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
-import { WorkMedia, WorkMediaProps } from "./work-media";
+import { WorkMedia, WorkMediaProps } from "@/components/ui/work-media";
 
 type WorkItemProps = WorkMediaProps & {
     year: string | number;
