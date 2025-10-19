@@ -45,8 +45,8 @@ export function Works() {
                             <p className="text-[13px] flex items-center gap-1"><span className="text-neutral-200 dark:text-neutral-600 mr-2">2025</span> Yajuusenp.ai<ArrowUpRight size={14} className="inline-block" /></p>
                             <p className="text-sm mt-1">This site was created for people who dream of having a conversation with Yajuu Senpai. There are over 800 users.</p>
                             <div className="flex flex-col">
-                                <Image src={"/works/yajuusenp.ai/3.png"} alt="Yajuusenp.ai - 1" width={600} height={400} className="mt-3 rounded-md border-3 border-neutral-200 dark:border-neutral-800/80 w-full  shadow-[0_4px_12px_rgba(0,0,0,0.1)] dark:shadow-[0_4px_12px_rgba(0,0,0,0.3)]" />
-                                <Image src={"/works/yajuusenp.ai/2.png"} alt="Yajuusenp.ai - 1" width={600} height={400} className="mt-3 rounded-md border-3 border-neutral-200 dark:border-neutral-800/80 w-full  shadow-[0_4px_12px_rgba(0,0,0,0.1)] dark:shadow-[0_4px_12px_rgba(0,0,0,0.3)]" />
+                                <Image src={"/works/yajuusenp.ai/1.png"} alt="Yajuusenp.ai - 1" width={600} height={400} className="mt-3 rounded-md border-3 border-neutral-200 dark:border-neutral-800/80 w-full  shadow-[0_4px_12px_rgba(0,0,0,0.1)] dark:shadow-[0_4px_12px_rgba(0,0,0,0.3)]" />
+                                <Image src={"/works/yajuusenp.ai/2.png"} alt="Yajuusenp.ai - 2" width={600} height={400} className="mt-3 rounded-md border-3 border-neutral-200 dark:border-neutral-800/80 w-full  shadow-[0_4px_12px_rgba(0,0,0,0.1)] dark:shadow-[0_4px_12px_rgba(0,0,0,0.3)]" />
                             </div>
                         </div>
                     </Link>
