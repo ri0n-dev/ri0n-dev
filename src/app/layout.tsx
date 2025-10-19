@@ -61,7 +61,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`bg-neutral-50 dark:bg-neutral-950 ${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <div className="flex flex-col max-w-[720px] mx-auto px-4 pb-10">
+        <div className="flex flex-col max-w-[720px] mx-auto px-4 pb-4">
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange storageKey="acme-theme">
             <BlurFade delay={0.4}>
               <Header />
