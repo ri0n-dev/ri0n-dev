@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { useEffect, useRef } from "react";
 
 type ImageItem = {
     src: string;
@@ -27,25 +26,18 @@ export function WorkMedia({
     height = 400,
     className,
 }: WorkMediaProps) {
-    const videoRef = useRef<HTMLVideoElement>(null);
     const cls = className ? `${baseMediaClass} ${className}` : baseMediaClass;
-
-    useEffect(() => {
-        if (videoRef.current && videoSrc) {
-            videoRef.current.load();
-        }
-    }, [videoSrc]);
 
     if (videoSrc) {
         return (
             <video
-                ref={videoRef}
+                key={videoSrc}
                 className={cls}
                 autoPlay
                 muted
                 loop
                 playsInline
-                preload="metadata"
+                preload="auto"
                 aria-label={videoAriaLabel}
             >
                 <source src={videoSrc} type="video/mp4" />

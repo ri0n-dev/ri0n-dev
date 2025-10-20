@@ -23,7 +23,8 @@ export function Works() {
                     delay={1.4}
                     title="Uni School"
                     description="This is a homepage I created for a student team, commissioned for 5k yen."
-                    imageSrcs={[{ src: "/works/uni-school/1.png", alt: "uni-school - 1" }]}
+                    videoSrc='/works/uni-school/1.mp4'
+                    videoAriaLabel="Uni School video"
                 />
 
                 <WorkItem
