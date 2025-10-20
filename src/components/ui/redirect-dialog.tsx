@@ -63,7 +63,7 @@ export function RedirectDialog({ children, href }: { children: React.ReactNode; 
                         </div>
                     </DrawerTrigger>
                     <DrawerContent>
-                        <DrawerHeader className="mb-35">
+                        <DrawerHeader className="mb-25">
                             <DrawerTitle className="flex flex-col justify-center items-center">
                                 <MessageCircleWarning className="mb-2.5 text-neutral-400" size={20} />
                                 Move to Another Page?
