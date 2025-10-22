@@ -56,6 +56,16 @@ export function Works() {
                         { src: "/works/yajuusenp.ai/2.png", alt: "Yajuusenp.ai - 2" },
                     ]}
                 />
+
+                <WorkItem
+                    year={2025}
+                    delay={2.2}
+                    title="Zisty Website"
+                    href="https://www.zisty.net/"
+                    imageSrcs={[
+                        { src: "/works/zisty-website/1.png", alt: "Zisty Website - 1" },
+                    ]}
+                />
             </div>
         </section>
     )
