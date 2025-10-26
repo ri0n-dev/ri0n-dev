@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { ArrowUpRight, MessageCircleWarning } from "lucide-react";
 import {
     Dialog,
     DialogClose,
@@ -20,13 +19,20 @@ import {
     DrawerTitle,
     DrawerTrigger,
 } from "@/components/ui/drawer"
+import { MessageCircleWarning } from '@/components/animate-ui/icons/message-circle-warning';
+import { ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useState } from "react";
+import { useMediaQuery } from "@/hooks/use-media-query";
 
 export function RedirectDialog({ children, href }: { children: React.ReactNode; href: string }) {
+    const [open, setOpen] = useState(false);
+    const isDesktop = useMediaQuery("(min-width: 640px)");
+
     return (
         <>
-            <div className="hidden sm:block">
-                <Dialog>
+            {isDesktop ? (
+                <Dialog open={open} onOpenChange={setOpen}>
                     <DialogTrigger asChild>
                         <div className="cursor-pointer">
                             {children}
@@ -35,7 +41,7 @@ export function RedirectDialog({ children, href }: { children: React.ReactNode; 
                     <DialogContent className="sm:max-w-[480px]">
                         <DialogHeader>
                             <DialogTitle className="flex flex-col justify-center items-center sm:justify-start sm:items-start">
-                                <MessageCircleWarning className="mb-2.5 text-neutral-400" size={20} />
+                                <MessageCircleWarning className="mb-2.5 text-neutral-400" size={20} animate={open} />
                                 Move to Another Page?
                             </DialogTitle>
                             <DialogDescription>
@@ -52,11 +58,8 @@ export function RedirectDialog({ children, href }: { children: React.ReactNode; 
                         </DialogFooter>
                     </DialogContent>
                 </Dialog>
-            </div>
-
-            {/* Phone */}
-            <div className="block sm:hidden">
-                <Drawer>
+            ) : (
+                <Drawer open={open} onOpenChange={setOpen}>
                     <DrawerTrigger asChild>
                         <div className="cursor-pointer">
                             {children}
@@ -65,7 +68,7 @@ export function RedirectDialog({ children, href }: { children: React.ReactNode; 
                     <DrawerContent>
                         <DrawerHeader className="mb-30">
                             <DrawerTitle className="flex flex-col justify-center items-center">
-                                <MessageCircleWarning className="mb-2.5 text-neutral-400" size={20} />
+                                <MessageCircleWarning className="mb-2.5 text-neutral-400" size={20} animate={open} />
                                 Move to Another Page?
                             </DrawerTitle>
                             <DrawerDescription>
@@ -82,7 +85,7 @@ export function RedirectDialog({ children, href }: { children: React.ReactNode; 
                         </DrawerFooter>
                     </DrawerContent>
                 </Drawer>
-            </div>
+            )}
         </>
     );
 }
