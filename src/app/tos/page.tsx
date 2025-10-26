@@ -13,7 +13,7 @@ export default function Tos() {
           <h1 className="text-3xl font-bold text-center">Terms of service</h1>
           <h1 className="text-xl mb-8 text-center text-neutral-500">Japanese Only</h1>
 
-          <div className="prose prose-lg max-w-none">
+          <div className="max-w-none">
             <p className="mb-8">
               本利用規約は、私が提供するウェブサイトおよびサービス（以下「本サービス」といいます。）の利用条件を定めるものです。利用された場合、以下の内容に同意したものとみなします。
             </p>

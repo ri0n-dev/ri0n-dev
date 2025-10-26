@@ -13,7 +13,7 @@ export default function Privacy() {
                     <h1 className="text-3xl font-bold text-center">Privacy Policy</h1>
                     <h1 className="text-xl mb-8 text-center text-neutral-500">Japanese Only</h1>
 
-                    <div className="prose prose-lg max-w-none">
+                    <div className="max-w-none">
                         <p className="mb-8">
                             本プライバシーポリシーは、私が提供するウェブサイトおよびサービス（以下「本サービス」といいます。）に適応されます。利用された場合、以下の内容に同意したものとみなします。
                         </p>
