@@ -1,9 +1,7 @@
-import Link from "next/link";
-import { ArrowUpRight, MessageCircleWarning } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { WorkMedia, WorkMediaProps } from "@/components/ui/work-media";
 import { BlurFade } from "@/components/magicui/blur-fade";
 import { RedirectDialog } from "@/components/ui/redirect-dialog";
-import { Button } from "@/components/ui/button";
 
 type WorkItemProps = WorkMediaProps & {
     year: string | number;

@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   },
   description,
   openGraph: {
-    title: siteName,
+    title: "ri0n.dev",
     description,
     url,
     siteName,
