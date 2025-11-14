@@ -13,8 +13,8 @@ export function About() {
             <BlurFade delay={0.8}>
                 <p className="text-[15px] md:text-base">
                     I live in <span className="text-neutral-900 dark:text-neutral-100">Sapporo, Japan</span>. In addition to
-                    development, I also create <span className="text-neutral-900 dark:text-neutral-100">videos</span> and work as a{" "}
-                    <span className="text-neutral-900 dark:text-neutral-100">malware tester</span>. My YouTube channel has over{" "}
+                    development, I also handle <span className="text-neutral-900 dark:text-neutral-100">video editing</span>, <span className="text-neutral-900 dark:text-neutral-100">image editing</span> and <span className="text-neutral-900 dark:text-neutral-100">rendering</span>.
+                    My YouTube channel has over{" "}
                     <span className="text-neutral-900 dark:text-neutral-100">3,000 subscribers</span> and a total of{" "}
                     <span className="text-neutral-900 dark:text-neutral-100">1.3 million views</span>.
                 </p>
