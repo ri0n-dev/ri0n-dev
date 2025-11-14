@@ -14,6 +14,7 @@ export function Works() {
                     year={2025}
                     delay={1.2}
                     title="Card Design"
+                    fallback={isDarkTheme ? '/works/card-design/1-dark.fallback.png' : '/works/card-design/1.fallback.png'}
                     videoSrc={isDarkTheme ? '/works/card-design/1-dark.mp4' : '/works/card-design/1.mp4'}
                     videoAriaLabel="Card Design video"
                 />
@@ -22,6 +23,7 @@ export function Works() {
                     year={2025}
                     delay={1.4}
                     title="Uni School"
+                    fallback="/works/uni-school/1.fallback.png"
                     description="This is a homepage I created for a student team, commissioned for 5k yen."
                     videoSrc='/works/uni-school/1.mp4'
                     videoAriaLabel="Uni School video"
@@ -32,7 +34,7 @@ export function Works() {
                     delay={1.6}
                     title="111-theme"
                     href="https://github.com/ri0n-dev/111-theme"
-                    description="This is a theme based on #111, and it works with VSCode. Downloaded by over 300 times."
+                    description="This is a theme based on #111, and it works with VSCode. Downloaded by over 300 times!"
                     imageSrcs={[{ src: "/works/111-theme/1.png", alt: "111-theme - 1" }]}
                 />
 

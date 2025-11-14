@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { ReactNode } from "react";
 
 type ImageItem = {
     src: string;
@@ -12,6 +13,7 @@ type WorkMediaProps = {
     width?: number;
     height?: number;
     className?: string;
+    fallback?: ReactNode;
 };
 
 const baseMediaClass =
@@ -25,6 +27,7 @@ export function WorkMedia({
     width = 600,
     height = 400,
     className,
+    fallback,
 }: WorkMediaProps) {
     const cls = className ? `${baseMediaClass} ${className}` : baseMediaClass;
 
@@ -76,7 +79,7 @@ export function WorkMedia({
         );
     }
 
-    return null;
+    return fallback || null;
 }
 
 export type { WorkMediaProps };
