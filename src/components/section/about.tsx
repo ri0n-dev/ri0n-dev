@@ -22,7 +22,7 @@ export function About() {
             </BlurFade>
             <BlurFade delay={1}>
                 <p className="flex text-[15px] md:text-base">
-                    I&apos;m Listening to <Activity />
+                    I&apos;m listening to <Activity />
                 </p>
             </BlurFade>
         </section>
