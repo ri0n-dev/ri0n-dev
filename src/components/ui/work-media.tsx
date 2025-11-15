@@ -1,71 +1,73 @@
 import Image from "next/image";
-import { ReactNode } from "react";
-
-type ImageItem = {
-    src: string;
-    alt: string;
-};
+import { useState, useEffect } from "react";
 
 type WorkMediaProps = {
     videoSrc?: string;
     videoAriaLabel?: string;
-    imageSrcs?: ImageItem[];
+    imageSrc?: { src: string; alt: string }[];
     width?: number;
     height?: number;
-    className?: string;
-    fallback?: ReactNode;
+    fallback?: string;
 };
-
-const baseMediaClass =
-    "mt-3 rounded-md border-3 border-neutral-200 dark:border-neutral-800/80 w-full";
-
 
 export function WorkMedia({
     videoSrc,
     videoAriaLabel,
-    imageSrcs,
+    imageSrc,
     width = 600,
     height = 400,
-    className,
     fallback,
 }: WorkMediaProps) {
-    const cls = className ? `${baseMediaClass} ${className}` : baseMediaClass;
+    const cls = "mt-3 rounded-md border-3 border-neutral-200 dark:border-neutral-800/80 w-full";
+    const [isVideoLoaded, setIsVideoLoaded] = useState(false);
+    const [hasVideoError, setHasVideoError] = useState(false);
+
+    useEffect(() => {
+        if (videoSrc) {
+            setIsVideoLoaded(false);
+            setHasVideoError(false);
+        }
+    }, [videoSrc]);
 
     if (videoSrc) {
         return (
-            <video
-                key={videoSrc}
-                className={cls}
-                autoPlay
-                muted
-                loop
-                playsInline
-                preload="auto"
-                aria-label={videoAriaLabel}
-            >
-                <source src={videoSrc} type="video/mp4" />
-                Your browser does not support the video tag.
-            </video>
+            <>
+                {(!isVideoLoaded || hasVideoError) && fallback && (
+                    <Image
+                        src={fallback}
+                        alt="video loading placeholder"
+                        width={width}
+                        height={height}
+                        className={cls}
+                        priority={false}
+                        aria-hidden={!isVideoLoaded && !hasVideoError ? "true" : undefined}
+                    />
+                )}
+
+                <video
+                    key={videoSrc}
+                    className={cls}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    preload="auto"
+                    aria-label={videoAriaLabel}
+                    onLoadedData={() => setIsVideoLoaded(true)}
+                    onError={() => setHasVideoError(true)}
+                    style={{ display: isVideoLoaded && !hasVideoError ? "block" : "none" }}
+                >
+                    <source src={videoSrc} type="video/mp4" />
+                    Your browser is not supported 😒
+                </video>
+            </>
         );
     }
 
-    if (imageSrcs && imageSrcs.length > 0) {
-        if (imageSrcs.length === 1) {
-            const img = imageSrcs[0];
-            return (
-                <Image
-                    src={img.src}
-                    alt={img.alt}
-                    width={width}
-                    height={height}
-                    className={cls}
-                />
-            );
-        }
-
+    if (imageSrc) {
         return (
             <div className="flex flex-col">
-                {imageSrcs.map((img, idx) => (
+                {imageSrc.map((img, idx) => (
                     <Image
                         key={`${img.src}-${idx}`}
                         src={img.src}
@@ -79,7 +81,19 @@ export function WorkMedia({
         );
     }
 
-    return fallback || null;
+    if (fallback) {
+        return (
+            <Image
+                src={fallback}
+                alt="Fallback media"
+                width={width}
+                height={height}
+                className={cls}
+            />
+        );
+    }
+
+    return null;
 }
 
 export type { WorkMediaProps };

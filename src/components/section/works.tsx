@@ -35,7 +35,7 @@ export function Works() {
                     title="111-theme"
                     href="https://github.com/ri0n-dev/111-theme"
                     description="This is a theme based on #111, and it works with VSCode. Downloaded by over 300 times!"
-                    imageSrcs={[{ src: "/works/111-theme/1.png", alt: "111-theme - 1" }]}
+                    imageSrc={[{ src: "/works/111-theme/1.png", alt: "111-theme - 1" }]}
                 />
 
                 <WorkItem
@@ -44,7 +44,7 @@ export function Works() {
                     title="Prodfind"
                     href="https://github.com/teamzisty/prodfind"
                     description="Let's find the best products together!"
-                    imageSrcs={[{ src: isDarkTheme ? '/works/prodfind/1-dark.png' : '/works/prodfind/1.png', alt: "prodfind - 1" }]}
+                    imageSrc={[{ src: isDarkTheme ? '/works/prodfind/1-dark.png' : '/works/prodfind/1.png', alt: "prodfind - 1" }]}
                 />
 
                 <WorkItem
@@ -53,7 +53,7 @@ export function Works() {
                     title="Yajuusenp.ai"
                     href="https://www.yajuusenp.ai/"
                     description="This site was created for people who dream of having a conversation with Yajuu Senpai. There are over 800 users."
-                    imageSrcs={[
+                    imageSrc={[
                         { src: "/works/yajuusenp.ai/1.png", alt: "Yajuusenp.ai - 1" },
                         { src: "/works/yajuusenp.ai/2.png", alt: "Yajuusenp.ai - 2" },
                     ]}
@@ -64,7 +64,7 @@ export function Works() {
                     delay={2.2}
                     title="Zisty Website"
                     href="https://www.zisty.net/"
-                    imageSrcs={[
+                    imageSrc={[
                         { src: "/works/zisty-website/1.png", alt: "Zisty Website - 1" },
                     ]}
                 />
