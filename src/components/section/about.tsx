@@ -1,4 +1,5 @@
 import { BlurFade } from "@/components/magicui/blur-fade";
+import { Activity } from "@/components/ui/activity";
 
 export function About() {
     return (
@@ -20,9 +21,8 @@ export function About() {
                 </p>
             </BlurFade>
             <BlurFade delay={1}>
-                <p className="text-[15px] md:text-base">
-                    I sometimes play Tetris for fun. Looking forward to{" "}
-                    <span className="text-neutral-900 dark:text-neutral-100">connecting</span> with you! :)
+                <p className="flex text-[15px] md:text-base">
+                    I&apos;m Listening to <Activity />
                 </p>
             </BlurFade>
         </section>
