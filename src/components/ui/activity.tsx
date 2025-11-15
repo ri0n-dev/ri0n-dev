@@ -43,7 +43,6 @@ export function Activity() {
                 }
             }
         }
-        return () => ws.close()
     }, [])
 
     const spotify = presence?.spotify
@@ -54,7 +53,7 @@ export function Activity() {
                 <>
                     <span className="flex items-center text-neutral-900 dark:text-neutral-100 ml-1 mr-1 hover:underline">
                         <RedirectDialog href={`https://open.spotify.com/track/${spotify.track_id} `}>
-                            <SiSpotify className="inline w-4 h-4 mr-1" /> {spotify.song} - {spotify.artist}
+                            <SiSpotify className="inline w-4 h-4 mr-0.5" /> {spotify.song} - {spotify.artist}
                         </RedirectDialog>
                     </span> now
                 </> :
@@ -62,13 +61,13 @@ export function Activity() {
                     <>
                         <span className="flex items-center text-neutral-900 dark:text-neutral-100 ml-1 mr-1 hover:underline">
                             <RedirectDialog href={`https://open.spotify.com/track/${lastSpotify.track_id} `}>
-                                <SiSpotify className="inline w-4 h-4 mr-1" /> {lastSpotify.song} - {lastSpotify.artist}
+                                <SiSpotify className="inline w-4 h-4 mr-0.5" /> {lastSpotify.song} - {lastSpotify.artist}
                             </RedirectDialog>
                         </span> last
                     </> :
                     <>
                         <span className="flex items-center ml-1 mr-1">
-                            <SiSpotify className="inline w-4 h-4 mr-1" /> nothing right now
+                            <SiSpotify className="inline w-4 h-4 mr-0.5" /> nothing right now
                         </span>
                     </>
             }
