@@ -21,7 +21,7 @@ export function About() {
                 </p>
             </BlurFade>
             <BlurFade delay={1}>
-                <p className="flex text-[15px] md:text-base">
+                <p className="text-[15px] md:text-base">
                     I&apos;m listening to <Activity />
                 </p>
             </BlurFade>

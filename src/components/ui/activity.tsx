@@ -51,23 +51,23 @@ export function Activity() {
         <>
             {spotify ?
                 <>
-                    <span className="flex items-center text-neutral-900 dark:text-neutral-100 ml-1 mr-1 hover:underline">
+                    <span className="inline-flex items-center text-neutral-900 dark:text-neutral-100 hover:underline">
                         <RedirectDialog href={`https://open.spotify.com/track/${spotify.track_id} `}>
-                            <SiSpotify className="inline w-4 h-4 mr-0.5" /> {spotify.song} - {spotify.artist.split(';').map(a => a.trim()).join(', ')}
+                            <span><SiSpotify className="inline w-4 h-4 mr-0.5 mb-0.5" /> {spotify.song} - {spotify.artist.split(';').map(a => a.trim()).join(', ')}</span>
                         </RedirectDialog>
                     </span> now
                 </> :
                 lastSpotify ?
                     <>
-                        <span className="flex items-center text-neutral-900 dark:text-neutral-100 ml-1 mr-1 hover:underline">
+                        <span className="inline-flex items-center text-neutral-900 dark:text-neutral-100 hover:underline">
                             <RedirectDialog href={`https://open.spotify.com/track/${lastSpotify.track_id} `}>
-                                <SiSpotify className="inline w-4 h-4 mr-0.5" /> {lastSpotify.song} - {lastSpotify.artist.split(';').map(a => a.trim()).join(', ')}
+                                <span><SiSpotify className="inline w-4 h-4 mr-0.5 mb-0.5" /> {lastSpotify.song} - {lastSpotify.artist.split(';').map(a => a.trim()).join(', ')}</span>
                             </RedirectDialog>
                         </span> last
                     </> :
                     <>
-                        <span className="flex items-center ml-1 mr-1">
-                            <SiSpotify className="inline w-4 h-4 mr-0.5" /> nothing right now
+                        <span className="inline-flex items-center ml-1 mr-1">
+                            <SiSpotify className="inline w-4 h-4 mr-0.5 mb-0.5" /> nothing right now
                         </span>
                     </>
             }
