@@ -21,8 +21,8 @@ type LanyardPresence = {
 
 
 export function Activity() {
-    const [presence, setPresence] = useState<LanyardPresence | null>(null)
-    const [lastSpotify, setLastSpotify] = useState<LanyardPresence['spotify']>(null)
+    const [now, setNow] = useState<LanyardPresence | null>(null)
+    const [last, setLast] = useState<LanyardPresence['spotify']>(null)
 
     useEffect(() => {
         const ws = new WebSocket('wss://api.lanyard.rest/socket')
@@ -37,15 +37,15 @@ export function Activity() {
         ws.onmessage = (event) => {
             const data = JSON.parse(event.data)
             if (data.t === "INIT_STATE" || data.t === "PRESENCE_UPDATE") {
-                setPresence(data.d)
+                setNow(data.d)
                 if (data.d.spotify) {
-                    setLastSpotify(data.d.spotify)
+                    setLast(data.d.spotify)
                 }
             }
         }
     }, [])
 
-    const spotify = presence?.spotify
+    const spotify = now?.spotify
 
     return (
         <>
@@ -57,11 +57,11 @@ export function Activity() {
                         </RedirectDialog>
                     </span> now
                 </> :
-                lastSpotify ?
+                last ?
                     <>
                         <span className="inline-flex items-center text-neutral-900 dark:text-neutral-100 hover:underline">
-                            <RedirectDialog href={`https://open.spotify.com/track/${lastSpotify.track_id} `}>
-                                <span><SiSpotify className="inline w-4 h-4 mr-0.5 mb-0.5" /> {lastSpotify.song} - {lastSpotify.artist.split(';').map(a => a.trim()).join(', ')}</span>
+                            <RedirectDialog href={`https://open.spotify.com/track/${last.track_id} `}>
+                                <span><SiSpotify className="inline w-4 h-4 mr-0.5 mb-0.5" /> {last.song} - {last.artist.split(';').map(a => a.trim()).join(', ')}</span>
                             </RedirectDialog>
                         </span> last
                     </> :
