@@ -66,8 +66,8 @@ export function Activity() {
                         </span> last
                     </> :
                     <>
-                        <span className="inline-flex items-center ml-1 mr-1">
-                            <SiSpotify className="inline w-4 h-4 mr-0.5 mb-0.5" /> nothing right now
+                        <span>
+                            <SiSpotify className="inline w-4 h-4 ml-0.5 mr-0.5 mb-0.5" /> nothing right now
                         </span>
                     </>
             }
