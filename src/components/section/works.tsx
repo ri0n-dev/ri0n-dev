@@ -43,7 +43,7 @@ export function Works() {
                     delay={1.8}
                     title="Prodfind"
                     href="https://github.com/teamzisty/prodfind"
-                    description="Let's find the best products together!"
+                    description="This is a project I worked on with Zisty member rai, and I was in chrage of the frontend. Let's find the best products together!"
                     imageSrc={[{ src: isDarkTheme ? '/works/prodfind/1-dark.png' : '/works/prodfind/1.png', alt: "prodfind - 1" }]}
                 />
 
@@ -52,7 +52,7 @@ export function Works() {
                     delay={2}
                     title="Yajuusenp.ai"
                     href="https://www.yajuusenp.ai/"
-                    description="This site was created for people who dream of having a conversation with Yajuu Senpai. There are over 800 users."
+                    description="This site was created for people who dream of having a conversation with Yajuu Senpai. Got over 1,000 users."
                     imageSrc={[
                         { src: "/works/yajuusenp.ai/1.png", alt: "Yajuusenp.ai - 1" },
                         { src: "/works/yajuusenp.ai/2.png", alt: "Yajuusenp.ai - 2" },
