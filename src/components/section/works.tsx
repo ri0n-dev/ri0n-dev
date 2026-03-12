@@ -60,18 +60,6 @@ export function Works() {
                 <WorkItem
                     year={2025}
                     delay={2.2}
-                    title="Yajuusenp.ai"
-                    href="https://www.yajuusenp.ai/"
-                    description="This site was created for people who dream of having a conversation with Yajuu Senpai. Got over 1,000 users."
-                    imageSrc={[
-                        { src: "/works/yajuusenp.ai/1.png", alt: "Yajuusenp.ai - 1" },
-                        { src: "/works/yajuusenp.ai/2.png", alt: "Yajuusenp.ai - 2" },
-                    ]}
-                />
-
-                <WorkItem
-                    year={2025}
-                    delay={2.4}
                     title="Zisty Website"
                     href="https://www.zisty.net/"
                     imageSrc={[
