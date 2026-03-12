@@ -41,7 +41,7 @@ export function RedirectDialog({ children, href }: { children: React.ReactNode; 
                     <DialogContent className="sm:max-w-[480px]">
                         <DialogHeader>
                             <DialogTitle className="flex flex-col justify-center items-center sm:justify-start sm:items-start">
-                                <MessageCircleWarning className="mb-2.5 text-neutral-400" size={20} animate={open} />
+                                <MessageCircleWarning className="mb-2.5 text-neutral-800 dark:text-neutral-400" size={20} animate={open} />
                                 Move to Another Page?
                             </DialogTitle>
                             <DialogDescription>
@@ -68,7 +68,7 @@ export function RedirectDialog({ children, href }: { children: React.ReactNode; 
                     <DrawerContent>
                         <DrawerHeader className="mb-30">
                             <DrawerTitle className="flex flex-col justify-center items-center">
-                                <MessageCircleWarning className="mb-2.5 text-neutral-400" size={20} animate={open} />
+                                <MessageCircleWarning className="mb-2.5 text-foreground" size={20} animate={open} />
                                 Move to Another Page?
                             </DrawerTitle>
                             <DrawerDescription>
