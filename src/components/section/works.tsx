@@ -44,7 +44,7 @@ export function Works() {
                     delay={1.8}
                     title="111-theme"
                     href="https://github.com/ri0n-dev/111-theme"
-                    description="This is a theme based on #111, and it works with VSCode. Downloaded by over 300 times!"
+                    description="This is a theme based on #111, and it works with VSCode. Downloaded by over 400 times!"
                     imageSrc={[{ src: "/works/111-theme/1.png", alt: "111-theme - 1" }]}
                 />
 
