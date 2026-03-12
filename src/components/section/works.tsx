@@ -23,6 +23,14 @@ export function Works() {
                 <WorkItem
                     year={2025}
                     delay={1.4}
+                    title="Personal Website"
+                    description="This is my personal website, built with Next.js and Tailwind CSS."
+                    imageSrc={[{ src: isDarkTheme ? '/works/personal-website/1-dark.png' : '/works/personal-website/1.png', alt: "Personal Website - 1" }]}
+                />
+
+                <WorkItem
+                    year={2025}
+                    delay={1.6}
                     title="Card Design"
                     fallback={isDarkTheme ? '/works/card-design/1-dark.fallback.png' : '/works/card-design/1.fallback.png'}
                     videoSrc={isDarkTheme ? '/works/card-design/1-dark.mp4' : '/works/card-design/1.mp4'}
@@ -31,7 +39,7 @@ export function Works() {
 
                 <WorkItem
                     year={2025}
-                    delay={1.6}
+                    delay={1.8}
                     title="Uni School"
                     fallback="/works/uni-school/1.fallback.png"
                     description="This is a homepage I created for a student team, commissioned for 5k yen."
@@ -41,7 +49,7 @@ export function Works() {
 
                 <WorkItem
                     year={2025}
-                    delay={1.8}
+                    delay={2.0}
                     title="111-theme"
                     href="https://github.com/ri0n-dev/111-theme"
                     description="This is a theme based on #111, and it works with VSCode. Downloaded by over 400 times!"
@@ -50,18 +58,16 @@ export function Works() {
 
                 <WorkItem
                     year={2025}
-                    delay={2.0}
+                    delay={2.2}
                     title="Prodfind"
-                    href="https://github.com/teamzisty/prodfind"
                     description="This is a project I worked on with Zisty member rai, and I was in chrage of the frontend. Let's find the best products together!"
                     imageSrc={[{ src: isDarkTheme ? '/works/prodfind/1-dark.png' : '/works/prodfind/1.png', alt: "prodfind - 1" }]}
                 />
 
                 <WorkItem
                     year={2025}
-                    delay={2.2}
+                    delay={2.4}
                     title="Zisty Website"
-                    href="https://www.zisty.net/"
                     imageSrc={[
                         { src: "/works/zisty-website/1.png", alt: "Zisty Website - 1" },
                     ]}
