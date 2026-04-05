@@ -3,13 +3,14 @@ import { WorkMedia, WorkMediaProps } from "@/components/ui/work-media";
 import { BlurFade } from "@/components/magicui/blur-fade";
 import { RedirectDialog } from "@/components/ui/redirect-dialog";
 
-type WorkItemProps = Omit<WorkMediaProps, 'fallback'> & {
+type WorkItemProps = Omit<WorkMediaProps, 'fallback' | 'darkFallback'> & {
     year: string | number;
     title: string;
     delay: number;
     href?: string;
     description?: string;
     fallback?: string;
+    darkFallback?: string;
 };
 
 export function WorkItem({ year, title, href, description, delay, fallback, ...media }: WorkItemProps) {

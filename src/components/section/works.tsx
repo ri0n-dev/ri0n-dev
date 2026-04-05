@@ -1,12 +1,6 @@
-"use client";
-
 import { WorkItem } from "@/components/ui/work-item";
-import { useTheme } from "next-themes";
 
 export function Works() {
-    const { theme } = useTheme();
-    const isDarkTheme = theme === "dark";
-
     return (
         <section className="flex flex-col gap-y-3 items-left justify-center mt-25 text-neutral-500 dark:text-neutral-400 text-base text-left">
             <div className="flex flex-col gap-9">
@@ -25,15 +19,17 @@ export function Works() {
                     delay={1.4}
                     title="Personal Website"
                     description="This is my personal website, built with Next.js and Tailwind CSS."
-                    imageSrc={[{ src: isDarkTheme ? '/works/personal-website/1-dark.png' : '/works/personal-website/1.png', alt: "Personal Website - 1" }]}
+                    imageSrc={[{ src: '/works/personal-website/1.png', darkSrc: '/works/personal-website/1-dark.png', alt: "Personal Website - 1" }]}
                 />
 
                 <WorkItem
                     year={2025}
                     delay={1.6}
                     title="Card Design"
-                    fallback={isDarkTheme ? '/works/card-design/1-dark.fallback.png' : '/works/card-design/1.fallback.png'}
-                    videoSrc={isDarkTheme ? '/works/card-design/1-dark.mp4' : '/works/card-design/1.mp4'}
+                    fallback='/works/card-design/1.fallback.png'
+                    darkFallback='/works/card-design/1-dark.fallback.png'
+                    videoSrc='/works/card-design/1.mp4'
+                    darkVideoSrc='/works/card-design/1-dark.mp4'
                     videoAriaLabel="Card Design video"
                 />
 
@@ -61,7 +57,7 @@ export function Works() {
                     delay={2.2}
                     title="Prodfind"
                     description="This is a project I worked on with Zisty member rai, and I was in chrage of the frontend. Let's find the best products together!"
-                    imageSrc={[{ src: isDarkTheme ? '/works/prodfind/1-dark.png' : '/works/prodfind/1.png', alt: "prodfind - 1" }]}
+                    imageSrc={[{ src: '/works/prodfind/1.png', darkSrc: '/works/prodfind/1-dark.png', alt: "prodfind - 1" }]}
                 />
 
                 <WorkItem
