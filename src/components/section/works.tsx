@@ -7,21 +7,21 @@ export function Works() {
                 <WorkItem
                     year={2025}
                     delay={1.2}
-                    title="Rainbow Button"
-                    href="https://uiverse.io/ri0n-dev/sour-wasp-14"
-                    description="This is a button created for submitting to UIverse&apos;s &quot;Button Mastery 12&quot; challenge."
+                    title="Personal Website"
+                    description="This is my personal website, built with Next.js and Tailwind CSS."
                     media={[
-                        { type: 'video', src: 'https://cdn.ri0n.dev/rainbow-button.mp4', ariaLabel: "Rainbow Button video" },
+                        { type: 'video', src: 'https://cdn.ri0n.dev/personal-website.mp4' },
                     ]}
                 />
 
                 <WorkItem
                     year={2025}
                     delay={1.4}
-                    title="Personal Website"
-                    description="This is my personal website, built with Next.js and Tailwind CSS."
+                    title="Rainbow Button"
+                    href="https://uiverse.io/ri0n-dev/sour-wasp-14"
+                    description="This is a button created for submitting to UIverse&apos;s &quot;Button Mastery 12&quot; challenge."
                     media={[
-                        { type: 'video', src: 'https://cdn.ri0n.dev/personal-website.mp4' },
+                        { type: 'video', src: 'https://cdn.ri0n.dev/rainbow-button.mp4', ariaLabel: "Rainbow Button video" },
                     ]}
                 />
 
@@ -69,6 +69,15 @@ export function Works() {
                 <WorkItem
                     year={2025}
                     delay={2.4}
+                    title="Personal Website Old"
+                    media={[
+                        { type: 'video', src: 'https://cdn.ri0n.dev/personal-website-old.mp4', ariaLabel: "Personal Website Old video" },
+                    ]}
+                />
+
+                <WorkItem
+                    year={2025}
+                    delay={2.6}
                     title="Zisty Website"
                     media={[
                         { type: 'image', src: "https://cdn.ri0n.dev/zisty-website.png", alt: "Zisty Website screenshot" },
