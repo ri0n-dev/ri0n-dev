@@ -18,7 +18,7 @@ export function WorkItem({ year, title, href, description, delay, media, width, 
     const header = (
         <>
             <p className="text-[13px] flex items-center gap-1">
-                <span className="text-neutral-400 dark:text-neutral-600 mr-1">{year}</span>
+                <span className="text-neutral-500 mr-1">{year}</span>
                 {title}
                 {href ? <ArrowUpRight size={14} className="inline-block" /> : null}
             </p>

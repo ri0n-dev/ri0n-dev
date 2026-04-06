@@ -21,7 +21,7 @@ export function Works() {
                     href="https://uiverse.io/ri0n-dev/sour-wasp-14"
                     description="This is a button created for submitting to UIverse&apos;s &quot;Button Mastery 12&quot; challenge."
                     media={[
-                        { type: 'video', src: 'https://cdn.ri0n.dev/rainbow-button.mp4', ariaLabel: "Rainbow Button video" },
+                        { type: 'video', src: 'https://cdn.ri0n.dev/rainbow-button.mp4' },
                     ]}
                 />
 
@@ -31,7 +31,7 @@ export function Works() {
                     title="Card Design"
                     description="A simple yet stylish card design."
                     media={[
-                        { type: 'video', src: 'https://cdn.ri0n.dev/card-design.mp4', darkSrc: 'https://cdn.ri0n.dev/card-design.dark.mp4', ariaLabel: "Card Design video" },
+                        { type: 'video', src: 'https://cdn.ri0n.dev/card-design.mp4', darkSrc: 'https://cdn.ri0n.dev/card-design.dark.mp4' },
                     ]}
                 />
 
@@ -41,7 +41,7 @@ export function Works() {
                     title="Uni School"
                     description="This is a homepage I created for a student team, commissioned for 5k yen."
                     media={[
-                        { type: 'video', src: 'https://cdn.ri0n.dev/unischool.mp4', ariaLabel: "Uni School video" },
+                        { type: 'video', src: 'https://cdn.ri0n.dev/unischool.mp4' },
                     ]}
                 />
 
@@ -71,7 +71,7 @@ export function Works() {
                     delay={2.4}
                     title="Personal Website Old"
                     media={[
-                        { type: 'video', src: 'https://cdn.ri0n.dev/personal-website-old.mp4', ariaLabel: "Personal Website Old video" },
+                        { type: 'video', src: 'https://cdn.ri0n.dev/personal-website-old.mp4' },
                     ]}
                 />
 

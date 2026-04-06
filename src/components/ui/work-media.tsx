@@ -13,9 +13,6 @@ type VideoMediaItem = {
     type: 'video';
     src: string;
     darkSrc?: string;
-    ariaLabel?: string;
-    fallback?: string;
-    darkFallback?: string;
 };
 
 type MediaItem = ImageMediaItem | VideoMediaItem;
@@ -41,7 +38,7 @@ function VideoItem({ item }: { item: VideoMediaItem }) {
                         loop
                         playsInline
                         preload="auto"
-                        aria-label={item.ariaLabel}
+                        aria-hidden="true"
                     >
                         <source src={item.src} type="video/mp4" />
                     </video>
@@ -57,7 +54,7 @@ function VideoItem({ item }: { item: VideoMediaItem }) {
                         loop
                         playsInline
                         preload="auto"
-                        aria-label={item.ariaLabel}
+                        aria-hidden="true"
                     >
                         <source src={item.darkSrc} type="video/mp4" />
                     </video>

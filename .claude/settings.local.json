@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep -n \"main\\\\|Main\" /c/Users/ri0n/Documents/Workspace/ri0n-dev/src/app/layout.tsx /c/Users/ri0n/Documents/Workspace/ri0n-dev/src/app/page.tsx /c/Users/ri0n/Documents/Workspace/ri0n-dev/src/components/section/*.tsx)"
+    ]
+  }
+}

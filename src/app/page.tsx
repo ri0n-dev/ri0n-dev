@@ -3,9 +3,9 @@ import { Works } from '@/components/section/works';
 
 export default function Home() {
   return (
-    <>
+    <main>
       <About />
       <Works />
-    </>
+    </main>
   );
 }
