@@ -8,7 +8,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { ThemeProvider } from "@/components/provider/theme";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
-import { GoogleAnalytics } from "@next/third-parties/google";
+import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { BlurFade } from "@/components/magicui/blur-fade";
 import "@/styles/globals.css";
@@ -74,9 +74,7 @@ export default function RootLayout({
             </BlurFade>
           </ThemeProvider>
 
-          {process.env.NEXT_PUBLIC_GA_ID && (
-            <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
-          )}
+          <Analytics />
           <SpeedInsights />
         </div>
       </body>
