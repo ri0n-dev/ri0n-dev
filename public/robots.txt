@@ -1,10 +1,10 @@
-# ✓ I am a robot
-# =========================
+# =======================
+#  ✓ I am a robot
+# =======================
 
 User-agent: *
 
-Allow: /
-Disallow: /tos/
-Disallow: /privacy/
+Disallow: /tos
+Disallow: /privacy
 
 Sitemap: https://www.ri0n.dev/sitemap.xml
