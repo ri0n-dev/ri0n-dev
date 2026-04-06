@@ -9,7 +9,7 @@ export function Header() {
                 <div className="flex items-center space-x-4">
                     <Link href="/">
                         <p className="text-sm text-neutral-500 dark:text-neutral-400">
-                            <span className="text-neutral-900 dark:text-neutral-50">Rion</span><br />Web Developer
+                            <span className="text-neutral-900 dark:text-neutral-50">Rion</span><br />Web Designer
                         </p>
                     </Link>
                 </div>

@@ -1,19 +1,20 @@
 import { ArrowUpRight } from "lucide-react";
-import { WorkMedia, WorkMediaProps } from "@/components/ui/work-media";
+import { WorkMedia, MediaItem } from "@/components/ui/work-media";
 import { BlurFade } from "@/components/magicui/blur-fade";
 import { RedirectDialog } from "@/components/ui/redirect-dialog";
 
-type WorkItemProps = Omit<WorkMediaProps, 'fallback' | 'darkFallback'> & {
+type WorkItemProps = {
     year: string | number;
     title: string;
     delay: number;
     href?: string;
     description?: string;
-    fallback?: string;
-    darkFallback?: string;
+    media?: MediaItem[];
+    width?: number;
+    height?: number;
 };
 
-export function WorkItem({ year, title, href, description, delay, fallback, ...media }: WorkItemProps) {
+export function WorkItem({ year, title, href, description, delay, media, width, height }: WorkItemProps) {
     const header = (
         <>
             <p className="text-[13px] flex items-center gap-1">
@@ -29,18 +30,16 @@ export function WorkItem({ year, title, href, description, delay, fallback, ...m
         <BlurFade delay={delay}>
             <div className="w-full">
                 {header}
-                <WorkMedia {...media} fallback={fallback} />
+                <WorkMedia media={media} width={width} height={height} />
             </div>
         </BlurFade>
     );
 
     if (href) {
         return (
-            <>
-                <RedirectDialog href={href}>
-                    {content}
-                </RedirectDialog>
-            </>
+            <RedirectDialog href={href}>
+                {content}
+            </RedirectDialog>
         );
     }
 

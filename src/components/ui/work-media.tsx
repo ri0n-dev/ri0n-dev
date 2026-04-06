@@ -1,164 +1,107 @@
 "use client";
 
 import Image from "next/image";
-import { useState, useEffect } from "react";
 
-type WorkMediaProps = {
-    videoSrc?: string;
-    darkVideoSrc?: string;
-    videoAriaLabel?: string;
-    imageSrc?: { src: string; darkSrc?: string; alt: string }[];
-    width?: number;
-    height?: number;
+type ImageMediaItem = {
+    type: 'image';
+    src: string;
+    darkSrc?: string;
+    alt: string;
+};
+
+type VideoMediaItem = {
+    type: 'video';
+    src: string;
+    darkSrc?: string;
+    ariaLabel?: string;
     fallback?: string;
     darkFallback?: string;
 };
 
-export function WorkMedia({
-    videoSrc,
-    darkVideoSrc,
-    videoAriaLabel,
-    imageSrc,
-    width = 600,
-    height = 400,
-    fallback,
-    darkFallback,
-}: WorkMediaProps) {
-    const cls = "mt-3 rounded-md border-3 border-neutral-200 dark:border-neutral-800/80 w-full";
-    const [isVideoLoaded, setIsVideoLoaded] = useState(false);
-    const [hasVideoError, setHasVideoError] = useState(false);
+type MediaItem = ImageMediaItem | VideoMediaItem;
 
-    useEffect(() => {
-        if (videoSrc || darkVideoSrc) {
-            setIsVideoLoaded(false);
-            setHasVideoError(false);
-        }
-    }, [videoSrc, darkVideoSrc]);
+type WorkMediaProps = {
+    media?: MediaItem[];
+    width?: number;
+    height?: number;
+};
 
-    if (videoSrc || darkVideoSrc) {
-        const showFallback = !isVideoLoaded || hasVideoError;
-        return (
-            <>
-                {showFallback && fallback && (
-                    <Image
-                        src={fallback}
-                        alt="video loading placeholder"
-                        width={width}
-                        height={height}
-                        className={`${cls}${darkFallback ? " dark:hidden" : ""}`}
-                        priority={false}
-                        aria-hidden={showFallback ? "true" : undefined}
-                    />
-                )}
-                {showFallback && darkFallback && (
-                    <Image
-                        src={darkFallback}
-                        alt="video loading placeholder"
-                        width={width}
-                        height={height}
-                        className={`${cls} hidden dark:block`}
-                        priority={false}
-                        aria-hidden={showFallback ? "true" : undefined}
-                    />
-                )}
+const itemCls = "mt-3 rounded-md border-3 border-neutral-200 dark:border-neutral-800/80 w-full";
 
-                {videoSrc && (
-                    <div className={darkVideoSrc ? "dark:hidden" : ""}>
-                        <video
-                            key={videoSrc}
-                            className={cls}
-                            autoPlay
-                            muted
-                            loop
-                            playsInline
-                            preload="auto"
-                            aria-label={videoAriaLabel}
-                            onLoadedData={() => setIsVideoLoaded(true)}
-                            onError={() => setHasVideoError(true)}
-                            style={{ display: isVideoLoaded && !hasVideoError ? "block" : "none" }}
-                        >
-                            <source src={videoSrc} type="video/mp4" />
-                            Your browser is not supported 😒
-                        </video>
-                    </div>
-                )}
-                {darkVideoSrc && (
-                    <div className="hidden dark:block">
-                        <video
-                            key={darkVideoSrc}
-                            className={cls}
-                            autoPlay
-                            muted
-                            loop
-                            playsInline
-                            preload="auto"
-                            aria-label={videoAriaLabel}
-                            onLoadedData={() => setIsVideoLoaded(true)}
-                            onError={() => setHasVideoError(true)}
-                            style={{ display: isVideoLoaded && !hasVideoError ? "block" : "none" }}
-                        >
-                            <source src={darkVideoSrc} type="video/mp4" />
-                            Your browser is not supported 😒
-                        </video>
-                    </div>
-                )}
-            </>
-        );
-    }
-
-    if (imageSrc) {
-        return (
-            <div className="flex flex-col">
-                {imageSrc.map((img, idx) => (
-                    <span key={`${img.src}-${idx}`}>
-                        <Image
-                            src={img.src}
-                            alt={img.alt}
-                            width={width}
-                            height={height}
-                            className={`${cls}${img.darkSrc ? " dark:hidden" : ""}`}
-                        />
-                        {img.darkSrc && (
-                            <Image
-                                src={img.darkSrc}
-                                alt={img.alt}
-                                width={width}
-                                height={height}
-                                className={`${cls} hidden dark:block`}
-                            />
-                        )}
-                    </span>
-                ))}
-            </div>
-        );
-    }
-
-    if (fallback || darkFallback) {
-        return (
-            <>
-                {fallback && (
-                    <Image
-                        src={fallback}
-                        alt="Fallback media"
-                        width={width}
-                        height={height}
-                        className={`${cls}${darkFallback ? " dark:hidden" : ""}`}
-                    />
-                )}
-                {darkFallback && (
-                    <Image
-                        src={darkFallback}
-                        alt="Fallback media"
-                        width={width}
-                        height={height}
-                        className={`${cls} hidden dark:block`}
-                    />
-                )}
-            </>
-        );
-    }
-
-    return null;
+function VideoItem({ item }: { item: VideoMediaItem }) {
+    return (
+        <div className="flex-1 min-w-0">
+            {item.src && (
+                <div className={item.darkSrc ? "dark:hidden" : ""}>
+                    <video
+                        key={item.src}
+                        className={itemCls}
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
+                        preload="auto"
+                        aria-label={item.ariaLabel}
+                    >
+                        <source src={item.src} type="video/mp4" />
+                    </video>
+                </div>
+            )}
+            {item.darkSrc && (
+                <div className="hidden dark:block">
+                    <video
+                        key={item.darkSrc}
+                        className={itemCls}
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
+                        preload="auto"
+                        aria-label={item.ariaLabel}
+                    >
+                        <source src={item.darkSrc} type="video/mp4" />
+                    </video>
+                </div>
+            )}
+        </div>
+    );
 }
 
-export type { WorkMediaProps };
+function ImageItem({ item, width, height }: { item: ImageMediaItem; width: number; height: number }) {
+    return (
+        <div className="flex-1 min-w-0">
+            <Image
+                src={item.src}
+                alt={item.alt}
+                width={width}
+                height={height}
+                className={`${itemCls}${item.darkSrc ? " dark:hidden" : ""}`}
+            />
+            {item.darkSrc && (
+                <Image
+                    src={item.darkSrc}
+                    alt={item.alt}
+                    width={width}
+                    height={height}
+                    className={`${itemCls} hidden dark:block`}
+                />
+            )}
+        </div>
+    );
+}
+
+export function WorkMedia({ media, width = 600, height = 400 }: WorkMediaProps) {
+    if (!media || media.length === 0) return null;
+
+    return (
+        <div className="flex flex-col gap-2 w-full">
+            {media.map((item, idx) =>
+                item.type === 'video'
+                    ? <VideoItem key={idx} item={item} />
+                    : <ImageItem key={idx} item={item} width={width} height={height} />
+            )}
+        </div>
+    );
+}
+
+export type { WorkMediaProps, MediaItem, ImageMediaItem, VideoMediaItem };
