@@ -40,9 +40,6 @@ export const metadata: Metadata = {
     images: ogpIcon
   },
   icons: icon,
-  verification: {
-    google: ""
-  },
   publisher: `@ri0n_dev`,
   robots: "index, follow",
   creator: `@ri0n_dev`,
