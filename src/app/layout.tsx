@@ -4,7 +4,7 @@
 // -------------------------------------------------------------------------- //
 
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Inter } from "next/font/google";
+import { Inter } from "next/font/google";
 import { ThemeProvider } from "@/components/provider/theme";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
@@ -15,17 +15,6 @@ import "@/styles/globals.css";
 
 const inter = Inter({
   variable: "--font-inter",
-  subsets: ["latin"],
-});
-
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
   subsets: ["latin"],
 });
 
@@ -67,7 +56,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`bg-neutral-50 dark:bg-neutral-950 ${geistSans.variable} ${geistMono.variable} ${inter.variable} antialiased`}>
+      <body className={`bg-neutral-50 dark:bg-neutral-950 ${inter.variable} antialiased`}>
         <div className="flex flex-col max-w-[720px] mx-auto px-4 pb-4 font-inter">
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange storageKey="acme-theme">
             <BlurFade delay={0.4} inView>
