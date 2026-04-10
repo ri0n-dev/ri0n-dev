@@ -11,6 +11,7 @@ import { Footer } from "@/components/layout/footer";
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { BlurFade } from "@/components/magicui/blur-fade";
+import { HappyBalloon } from "@/components/ui/happy-balloon";
 import "@/styles/globals.css";
 
 const inter = Inter({
@@ -59,11 +60,14 @@ export default function RootLayout({
             <BlurFade delay={0.4} inView>
               <Header />
             </BlurFade>
+
             {children}
 
             <BlurFade delay={0.4} inView>
               <Footer />
             </BlurFade>
+
+            <HappyBalloon />
           </ThemeProvider>
 
           <Analytics />
