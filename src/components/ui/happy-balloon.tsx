@@ -98,7 +98,7 @@ export function HappyBalloon() {
 
   useEffect(() => {
     const now = new Date();
-    if (now.getMonth() !== 3 || now.getDate() !== 11) return; // April 11th only
+    if (now.getMonth() !== 3 || now.getDate() !== 10) return; // April 11th only
 
     const generated = generateBalloons(getBalloonCount());
     setBalloons(generated);

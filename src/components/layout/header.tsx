@@ -1,6 +1,6 @@
 import Link from "next/link"
 import { Button } from "../ui/button";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Send } from "lucide-react";
 
 export function Header() {
     return (
@@ -24,22 +24,21 @@ export function Header() {
                         <p className="flex items-center text-sm text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 hover:dark:text-neutral-50 transform duration-300">Github <ArrowUpRight size={14} /></p>
                     </Link>
 
-                    {/*
                     <Button
                         asChild
-                        size="sm"
+                        size="icon"
                         className="
                         shimmer-button
-                        text-xs px-3.5 rounded-md
+                        text-xs rounded-md size-8 sm:size-9 sm:h-8 sm:w-auto sm:px-3.5
                         shadow-[0_2px_0_rgba(0,0,0,0.5), 0_6px_14px_rgba(0,0,0,0.55)]
-                        transition-all duration-300 
+                        transition-all duration-300
                         "
                     >
                         <Link href="mailto:info@ri0n.dev" target="_blank" rel="noopener noreferrer">
-                            <span>Get in touch</span>
+                            <Send className="sm:hidden" />
+                            <span className="hidden sm:block">Get in touch</span>
                         </Link>
                     </Button>
-                    */}
                 </div>
             </div>
         </header>
