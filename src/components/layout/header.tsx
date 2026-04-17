@@ -1,6 +1,6 @@
 import Link from "next/link"
 import { Button } from "../ui/button";
-import { ArrowUpRight, Send } from "lucide-react";
+import { Send } from "lucide-react";
 
 export function Header() {
     return (
@@ -14,16 +14,6 @@ export function Header() {
                     </Link>
                 </div>
                 <div className="flex items-center space-x-5">
-                    <Link href="https://x.com/ri0n_dev" target="_blank" rel="noopener noreferrer">
-                        <p className="flex items-center text-sm text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 hover:dark:text-neutral-50 transform duration-300">X <ArrowUpRight size={14} /></p>
-                    </Link>
-                    <Link href="https://discord.com/users/851357394976899116" target="_blank" rel="noopener noreferrer">
-                        <p className="flex items-center text-sm text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 hover:dark:text-neutral-50 transform duration-300">Discord <ArrowUpRight size={14} /></p>
-                    </Link>
-                    <Link href="https://github.com/ri0n-dev" target="_blank" rel="noopener noreferrer">
-                        <p className="flex items-center text-sm text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 hover:dark:text-neutral-50 transform duration-300">Github <ArrowUpRight size={14} /></p>
-                    </Link>
-
                     <Button
                         asChild
                         size="icon"
@@ -34,7 +24,7 @@ export function Header() {
                         transition-all duration-300
                         "
                     >
-                        <Link href="mailto:info@ri0n.dev" target="_blank" rel="noopener noreferrer">
+                        <Link href="https://x.com/ri0n_dev" target="_blank" rel="noopener noreferrer">
                             <Send className="sm:hidden" />
                             <span className="hidden sm:block">Get in touch</span>
                         </Link>
