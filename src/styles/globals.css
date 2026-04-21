@@ -121,6 +121,26 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  ::selection {
+    background-color: oklch(88.837% 0.0001 271.152);
+    color: oklch(0.145 0 0);
+  }
+
+  .dark ::selection {
+    background-color: oklch(28.094% 0.00003 271.152);
+    color: oklch(0.985 0 0);
+  }
+
+  ::-moz-selection {
+    background-color: oklch(88.837% 0.0001 271.152);
+    color: oklch(0.145 0 0);
+  }
+
+  .dark ::-moz-selection {
+    background-color: oklch(28.094% 0.00003 271.152);
+    color: oklch(0.985 0 0);
+  }
 }
 
 ::-webkit-scrollbar {
