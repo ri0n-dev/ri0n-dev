@@ -16,10 +16,9 @@ export function Header() {
                 <div className="flex items-center space-x-5">
                     <Button
                         asChild
-                        size="icon"
                         className="
                         shimmer-button
-                        text-xs rounded-md size-8 sm:size-9 h-8 w-auto px-3 sm:px-3.5
+                        text-xs rounded-md h-8 px-3 sm:px-3.5
                         shadow-[0_2px_0_rgba(0,0,0,0.5), 0_6px_14px_rgba(0,0,0,0.55)]
                         transition-all duration-300
                         "
