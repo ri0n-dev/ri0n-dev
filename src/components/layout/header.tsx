@@ -5,7 +5,7 @@ import { Send } from "lucide-react";
 export function Header() {
     return (
         <header className="sticky w-full py-5">
-            <div className="container flex h-16 items-center justify-between">
+            <div className="flex h-16 w-full items-center justify-between">
                 <div className="flex items-center space-x-4">
                     <Link href="/">
                         <p className="text-sm text-neutral-500 dark:text-neutral-400">
@@ -24,7 +24,7 @@ export function Header() {
                         "
                     >
                         <Link href="https://x.com/ri0n_dev" target="_blank" rel="noopener noreferrer">
-                            <Send />
+                            <Send className="hidden sm:block" />
                             <span>Get in touch</span>
                         </Link>
                     </Button>
