@@ -19,14 +19,14 @@ export function Header() {
                         size="icon"
                         className="
                         shimmer-button
-                        text-xs rounded-md size-8 sm:size-9 sm:h-8 sm:w-auto sm:px-3.5
+                        text-xs rounded-md size-8 sm:size-9 h-8 w-auto px-3 sm:px-3.5
                         shadow-[0_2px_0_rgba(0,0,0,0.5), 0_6px_14px_rgba(0,0,0,0.55)]
                         transition-all duration-300
                         "
                     >
                         <Link href="https://x.com/ri0n_dev" target="_blank" rel="noopener noreferrer">
-                            <Send className="sm:hidden" />
-                            <span className="hidden sm:block">Get in touch</span>
+                            <Send />
+                            <span>Get in touch</span>
                         </Link>
                     </Button>
                 </div>
