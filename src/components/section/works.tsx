@@ -5,7 +5,7 @@ export function Works() {
         <section className="flex flex-col gap-y-3 items-left justify-center mt-25 text-neutral-500 dark:text-neutral-400 text-base text-left">
             <div className="flex flex-col gap-9">
                 <WorkItem
-                    year={2025}
+                    year={2026}
                     delay={1.2}
                     title="Personal Website"
                     description="This is my personal website, built with Next.js and Tailwind CSS."
