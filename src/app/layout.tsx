@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     description,
     url,
     siteName,
-    locale: "ja-JP",
+    locale: "en_US",
     type: "website",
     images: ogpIcon
   },
