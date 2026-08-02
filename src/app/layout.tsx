@@ -5,9 +5,9 @@
 
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import { ThemeProvider } from "@/components/provider/theme";
-import { Header } from "@/components/layout/header";
-import { Footer } from "@/components/layout/footer";
+import { ThemeProvider } from "@/components/theme-provider";
+import { Header } from "@/components/header";
+import { Footer } from "@/components/footer";
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { BlurFade } from "@/components/magicui/blur-fade";
@@ -73,6 +73,7 @@ export default function RootLayout({
           <Analytics />
           <SpeedInsights />
         </div>
+        <script src="/shimmer-button.js" defer />
       </body>
     </html>
   );
