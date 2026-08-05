@@ -73,7 +73,6 @@ export default function RootLayout({
           <Analytics />
           <SpeedInsights />
         </div>
-        <script src="/shimmer-button.js" defer />
       </body>
     </html>
   );

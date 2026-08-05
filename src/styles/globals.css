@@ -164,7 +164,8 @@
   overflow: hidden;
 }
 
-.shimmer-button-effect {
+.shimmer-button::before {
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
@@ -176,4 +177,14 @@
       transparent);
   transform: translateX(-100%) skewX(-15deg);
   pointer-events: none;
+}
+
+.shimmer-button.shimmering::before {
+  animation: shimmer 0.6s ease-in-out;
+}
+
+@keyframes shimmer {
+  to {
+    transform: translateX(300%) skewX(-15deg);
+  }
 }

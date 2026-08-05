@@ -1,23 +1,24 @@
+import NextLink from "next/link"
+import type { ComponentProps } from "react";
 import { BlurFade } from "@/components/magicui/blur-fade";
 import { Activity } from "@/components/ui/activity";
+
+function AboutLink({ ...props }: ComponentProps<typeof NextLink>) {
+    return <NextLink {...props} className={"hover:text-neutral-900 dark:hover:text-neutral-100 underline transition-colors duration-300"} />;
+}
 
 export function About() {
     return (
         <section className="flex flex-col gap-y-3 items-left justify-center mt-15 text-neutral-500 dark:text-neutral-400 text-base text-left">
             <BlurFade delay={0.6}>
                 <p className="text-[15px] md:text-base">
-                    I&apos;m a <span className="text-neutral-900 dark:text-neutral-100">developer</span> who enjoys{" "}
-                    <span className="text-neutral-900 dark:text-neutral-50">web development</span> and{" "}
-                    <span className="text-neutral-900 dark:text-neutral-100">design</span>.
+                    I'm a 16 y/o web developer who loves creating polished UIs and turning ideas into products.
+                    I also handle video editing, image editing and rendering. Outside of tech, I play basketball for my school team.
                 </p>
             </BlurFade>
             <BlurFade delay={0.8}>
                 <p className="text-[15px] md:text-base">
-                    I live in <span className="text-neutral-900 dark:text-neutral-100">Sapporo, Japan</span>. In addition to
-                    development, I also handle <span className="text-neutral-900 dark:text-neutral-100">video editing</span>, <span className="text-neutral-900 dark:text-neutral-100">image editing</span> and <span className="text-neutral-900 dark:text-neutral-100">rendering</span>.
-                    My YouTube channel has over{" "}
-                    <span className="text-neutral-900 dark:text-neutral-100">3,000 subscribers</span> and a total of{" "}
-                    <span className="text-neutral-900 dark:text-neutral-100">1.3 million views</span>.
+                    You can find me on <AboutLink href="https://x.com/ri0n_dev">@ri0n_dev</AboutLink>, <AboutLink href="https://github.com/ri0n-dev">GitHub</AboutLink>, or <AboutLink href="https://discord.com/users/851357394976899116">Discord</AboutLink>, or reach out to me via <AboutLink href="mailto:info@ri0n.dev">email</AboutLink>.
                 </p>
             </BlurFade>
             <BlurFade delay={1}>
