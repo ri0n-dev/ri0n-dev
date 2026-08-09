@@ -102,6 +102,11 @@ const works = [
     },
 ] satisfies Omit<WorkItemProps, "delay">[];
 
+const BLUR_FADE_DURATION = 0.4;
+
+export const WORKS_ANIMATION_END_DELAY =
+    INITIAL_DELAY + (works.length - 1) * DELAY_STEP + BLUR_FADE_DURATION;
+
 export function Works() {
     return (
         <section className="flex flex-col gap-y-3 items-left justify-center mt-25 text-neutral-500 dark:text-neutral-400 text-base text-left">
