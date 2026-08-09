@@ -34,7 +34,7 @@ export function AdringWidget({ delay = 0 }: AdringWidgetProps) {
                     <span className="text-neutral-500 mr-1">Ad</span>
                     <span>Sponsor</span>
                 </p>
-                <div className="flex items-center justify-center mt-3 rounded-md border-3 border-neutral-200 dark:border-neutral-800/80 w-full">
+                <div className="flex mt-3 p-2 rounded-md border-3 border-neutral-200 dark:border-neutral-800/80 w-full">
                     <GetAdringWidget />
                 </div>
             </div>
