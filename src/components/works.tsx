@@ -6,6 +6,14 @@ const DELAY_STEP = 0.2;
 const works = [
     {
         year: 2026,
+        title: "Tilt Card",
+        description: "3D tilt card with hover effects and front-to-back flipping.",
+        media: [
+            { type: "video", src: "https://cdn.ri0n.dev/tilt-card.mp4" },
+        ],
+    },
+    {
+        year: 2026,
         title: "Hex UI",
         href: "https://x.com/ri0n_dev/status/2081726372192583829",
         description: "Check out these beautiful and sophisticated UI blocks and templates.",
