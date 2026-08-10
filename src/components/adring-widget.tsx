@@ -31,8 +31,7 @@ export function AdringWidget({ delay = 0 }: AdringWidgetProps) {
         <BlurFade delay={delay}>
             <div className="w-full mt-9">
                 <p className="text-[13px] flex items-center gap-1 text-neutral-500 dark:text-neutral-400 text-base text-left">
-                    <span className="text-neutral-500 mr-1">Ad</span>
-                    <span>Sponsor</span>
+                    <span className="text-neutral-500 mr-1">Sponsored</span>
                 </p>
                 <div className="mt-3 p-2 md:p-4 rounded-md border-3 border-neutral-200 dark:border-neutral-800/80 w-full">
                     <GetAdringWidget />
