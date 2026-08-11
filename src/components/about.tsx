@@ -18,7 +18,7 @@ export function About() {
             </BlurFade>
             <BlurFade delay={0.8}>
                 <p className="text-[15px] md:text-base">
-                    You can find me on <AboutLink href="https://x.com/ri0n_dev">@ri0n_dev</AboutLink>, <AboutLink href="https://github.com/ri0n-dev">GitHub</AboutLink>, or <AboutLink href="https://discord.com/users/851357394976899116">Discord</AboutLink>, or reach out to me via <AboutLink href="mailto:info@ri0n.dev">email</AboutLink>.
+                    You can find me on <AboutLink href="https://x.com/ri0n_dev" target="_blank" rel="noopener noreferrer">@ri0n_dev</AboutLink>, <AboutLink href="https://github.com/ri0n-dev" target="_blank" rel="noopener noreferrer">GitHub</AboutLink>, or <AboutLink href="https://discord.com/users/851357394976899116" target="_blank" rel="noopener noreferrer">Discord</AboutLink>, or reach out to me via <AboutLink href="mailto:info@ri0n.dev">email</AboutLink>.
                 </p>
             </BlurFade>
             <BlurFade delay={1}>
