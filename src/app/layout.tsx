@@ -55,7 +55,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <script src="https://cdn.visitors.now/v.js" data-token="751438d7-c682-4d30-a23d-3ad48e46a20e"></script>
+        <script src="https://cdn.visitors.now/v.js" data-token="751438d7-c682-4d30-a23d-3ad48e46a20e" data-persist></script>
       </head>
       <body className={`bg-neutral-50 dark:bg-neutral-950 ${inter.variable} antialiased`}>
         <div className="flex flex-col max-w-[720px] mx-auto px-4 pb-4 font-inter">
