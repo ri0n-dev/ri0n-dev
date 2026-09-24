@@ -11,10 +11,10 @@ function GetAdringWidget() {
         if (!container) return;
 
         const script = document.createElement("script");
-        script.src = "https://adring.net/widget/v1.js";
+        script.src = "https://ar-cdn.net/widget/v2.js";
         script.async = true;
-        script.dataset.siteId = "467acf64-9c5e-45a0-813d-1a449667b7fa";
-        script.dataset.variant = "native";
+        script.referrerPolicy = "origin";
+        script.dataset.widget = "w7fba15d7a92ead27ab";
         container.append(script);
         return () => container.replaceChildren();
     }, []);
