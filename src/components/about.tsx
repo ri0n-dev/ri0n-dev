@@ -9,7 +9,7 @@ function AboutLink({ ...props }: ComponentProps<typeof NextLink>) {
 
 export function About() {
     return (
-        <section className="flex flex-col gap-y-3 items-left justify-center mt-15 text-neutral-500 dark:text-neutral-400 text-base text-left">
+        <section className="flex flex-col gap-y-3 items-left justify-center mt-12 text-neutral-500 dark:text-neutral-400 text-base text-left">
             <BlurFade delay={0.6}>
                 <p className="text-[15px] md:text-base">
                     I'm a 16 y/o web developer who loves creating polished UIs and turning ideas into products.

@@ -36,7 +36,7 @@ export function RedirectDialog({ children, href }: { children: React.ReactNode; 
             {isDesktop ? (
                 <Dialog open={open} onOpenChange={setOpen}>
                     <DialogTrigger asChild>
-                        <span className="inline-flex cursor-pointer">
+                        <span className="flex w-full cursor-pointer">
                             {children}
                         </span>
                     </DialogTrigger>
@@ -63,7 +63,7 @@ export function RedirectDialog({ children, href }: { children: React.ReactNode; 
             ) : (
                 <Drawer open={open} onOpenChange={setOpen}>
                     <DrawerTrigger asChild>
-                        <span className="inline-flex cursor-pointer">
+                        <span className="flex w-full cursor-pointer">
                             {children}
                         </span>
                     </DrawerTrigger>

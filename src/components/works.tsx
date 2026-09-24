@@ -1,6 +1,6 @@
 import { WorkItem, type WorkItemProps } from "@/components/ui/work-item";
 
-const INITIAL_DELAY = 1.2;
+const INITIAL_DELAY = 1.8;
 const DELAY_STEP = 0.2;
 
 const works = [
@@ -117,7 +117,7 @@ export const WORKS_ANIMATION_END_DELAY =
 
 export function Works() {
     return (
-        <section className="flex flex-col gap-y-3 items-left justify-center mt-25 text-neutral-500 dark:text-neutral-400 text-base text-left">
+        <section className="flex flex-col gap-y-3 items-left justify-center mt-18 text-neutral-500 dark:text-neutral-400 text-base text-left">
             <div className="flex flex-col gap-9">
                 {works.map((work, index) => (
                     <WorkItem
