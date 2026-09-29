@@ -21,7 +21,7 @@ export function Projects() {
                     const content = (
                         <>
                             <span className="transition-colors group-hover:text-neutral-900 dark:group-hover:text-neutral-50">{name}</span>
-                            <span aria-hidden="true" className="mx-2 flex-1 border-b border-dotted border-current [border-image:repeating-linear-gradient(to_right,currentColor_0_1px,transparent_1px_6px)_1] opacity-50" />
+                            <span aria-hidden="true" className="mx-2 flex-1 border-b border-dotted border-current text-neutral-400 [border-image:repeating-linear-gradient(to_right,currentColor_0_1px,transparent_1px_6px)_1] dark:text-neutral-600" />
                             <ArrowUpRight size={16} aria-hidden="true" className="shrink-0" />
                         </>
                     );

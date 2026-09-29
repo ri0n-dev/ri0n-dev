@@ -26,7 +26,7 @@ export function GetInTouchButton() {
         `}
         >
             <Link href="https://x.com/ri0n_dev" target="_blank" rel="noopener noreferrer">
-                <Send className="hidden sm:block" />
+                <Send />
                 <span>Get in touch</span>
             </Link>
         </Button>
